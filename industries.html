@@ -2,56 +2,262 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Industries - NEST Systems</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Industries — NEST Systems</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="what.html">What NEST Is</a></li>
-      <li><a href="changes.html">What NEST Changes</a></li>
-      <li><a href="industries.html" class="active">Industries</a></li>
-      <li><a href="guarantees.html">Guarantees & Limits</a></li>
-      <li><a href="status.html">Scientific Status</a></li>
-      <li><a href="deploy.html">Deployment Model</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="impressum.html">Impressum</a></li>
-    </ul>
-  </nav>
+<header class="topbar">
+  <div class="wrap">
+    <div class="brand">
+      <div class="mark"></div>
+      <div class="brandtext">
+        <div class="brandname">NEST</div>
+        <div class="brandtag">Deterministic system constraints</div>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="what.html">What NEST Is</a>
+      <a href="changes.html">What NEST Changes</a>
+      <a class="active" href="industries.html">Industries</a>
+      <a href="guarantees.html">Guarantees & Limits</a>
+      <a href="status.html">Scientific Status</a>
+      <a href="deploy.html">Deployment Model</a>
+      <a href="contact.html">Contact</a>
+      <a href="impressum.html">Impressum</a>
+    </nav>
+  </div>
 </header>
 
-<main class="main-content">
-  <h1>Industries</h1>
-  <p>NEST can be applied in many sectors where safety and predictability are critical. Examples include:</p>
-  
-  <div class="industry-container">
-    <div class="industry">
-      <img src="https://via.placeholder.com/400x200?text=Manufacturing+Automation" alt="Manufacturing automation">
-      <h2>Manufacturing & Automation</h2>
-      <p>Used in factories and production lines to ensure reliable operation of robots and machinery. NEST provides consistent performance under all conditions.</p>
+<main class="wrap page">
+  <section class="hero">
+    <div class="heroText">
+      <h1>Industries</h1>
+      <p class="lead">
+        NEST is domain-agnostic because it constrains system evolution rather than business logic.
+        The examples below describe recognizable failure situations and the structural effect: bounded behavior and non-propagating instability.
+      </p>
+      <div class="chips">
+        <span class="chip">Deterministic</span>
+        <span class="chip">Bounded</span>
+        <span class="chip">Non-adaptive</span>
+        <span class="chip">No prediction</span>
+        <span class="chip">No monitoring requirement</span>
+      </div>
     </div>
-    <div class="industry">
-      <img src="https://via.placeholder.com/400x200?text=Energy+Grid+Control" alt="Energy grid control">
-      <h2>Energy & Utilities</h2>
-      <p>Applied in power plants and grid management for fail-safe control. NEST helps prevent blackouts by containing faults within predetermined limits.</p>
+    <div class="heroPanel">
+      <div class="miniDiagram">
+        <div class="miniTitle">Illustrative</div>
+        <div class="miniRow">
+          <div class="miniBox">Local disturbance</div>
+          <div class="miniArrow">→</div>
+          <div class="miniBox ok">Contained region</div>
+        </div>
+        <div class="miniHint">Shows structure only, not measured data.</div>
+      </div>
     </div>
-    <div class="industry">
-      <img src="https://via.placeholder.com/400x200?text=Transportation" alt="Transportation and autonomous vehicles">
-      <h2>Transportation</h2>
-      <p>Critical systems like rail signaling, traffic control, and vehicle automation benefit from NEST's deterministic behavior and certified safety guarantees.</p>
-    </div>
-    <div class="industry">
-      <img src="https://via.placeholder.com/400x200?text=Robotics+and+IoT" alt="Robotics and IoT">
-      <h2>Robotics & IoT</h2>
-      <p>Used in robotics and embedded devices to maintain bounded performance. NEST ensures that connected devices act within known parameters, reducing risk.</p>
-    </div>
-  </div>
+  </section>
+
+  <section class="grid">
+    <article class="card">
+      <div class="cardHead">
+        <div class="icon">FX</div>
+        <div>
+          <h2>Financial trading & market infrastructure</h2>
+          <p class="muted">Order routing, risk checks, venue gateways, feed handlers</p>
+        </div>
+      </div>
+      <ul>
+        <li><b>Failure situations:</b> retry storms, queue avalanches, lock contention, tail latency spikes under bursts.</li>
+        <li><b>Structural effect:</b> prevents escalation/sustaining of instability; keeps disturbances local to the origin path.</li>
+        <li><b>What it is not:</b> not a latency “optimizer”; any speed/latency changes are workload-dependent side effects.</li>
+      </ul>
+      <div class="schematic">Schematic placeholder: bounded tail distribution / local containment</div>
+    </article>
+
+    <article class="card">
+      <div class="cardHead">
+        <div class="icon">BK</div>
+        <div>
+          <h2>Banking, payments & mortgage platforms</h2>
+          <p class="muted">Core banking, payment rails, credit decision workflows</p>
+        </div>
+      </div>
+      <ul>
+        <li><b>Failure situations:</b> cascading timeouts across services, runaway retries, inconsistent partial writes, recovery oscillations.</li>
+        <li><b>Structural effect:</b> bounds worst-case behavior so that failures do not propagate across dependency graphs.</li>
+        <li><b>Outcome:</b> smoother recovery characteristics and reduced “blast radius” during incidents.</li>
+      </ul>
+      <div class="schematic">Schematic placeholder: dependency graph with bounded propagation</div>
+    </article>
+
+    <article class="card">
+      <div class="cardHead">
+        <div class="icon">CL</div>
+        <div>
+          <h2>Cloud platforms & SRE-critical services</h2>
+          <p class="muted">Multi-tenant systems, orchestration, control planes</p>
+        </div>
+      </div>
+      <ul>
+        <li><b>Failure situations:</b> thundering herds, autoscaler oscillations, control-plane overload, cascading brownouts.</li>
+        <li><b>Structural effect:</b> deterministic constraints that preclude unbounded amplification under uncertainty.</li>
+        <li><b>Result:</b> fewer large-scale incident modes; containment of tenant-level disturbances.</li>
+      </ul>
+      <div class="schematic">Schematic placeholder: bounded control-plane evolution</div>
+    </article>
+
+    <article class="card">
+      <div class="cardHead">
+        <div class="icon">TL</div>
+        <div>
+          <h2>Telecom, VoIP & real-time media</h2>
+          <p class="muted">SIP/IMS, PBX, RTP pipelines, session controllers</p>
+        </div>
+      </div>
+      <ul>
+        <li><b>Failure situations:</b> jitter/queue blowups, session storms, signaling cascades, CPU runaway under malformed traffic.</li>
+        <li><b>Structural effect:</b> bounds degradation and prevents systemic collapse from localized anomalies.</li>
+        <li><b>Notes:</b> does not “predict” call quality; it constrains instability propagation.</li>
+      </ul>
+      <div class="schematic">Schematic placeholder: constrained flow / bounded jitter tail</div>
+    </article>
+
+    <article class="card">
+      <div class="cardHead">
+        <div class="icon">MD</div>
+        <div>
+          <h2>Medical devices & hospital infrastructure</h2>
+          <p class="muted">Infusion systems, monitoring, clinical workflow software</p>
+        </div>
+      </div>
+      <ul>
+        <li><b>Failure situations:</b> unsafe oscillations, runaway control loops, cascading alarms, queue lockups in patient flow systems.</li>
+        <li><b>Structural effect:</b> enforces bounded action under uncertainty; prevents sustained escalation.</li>
+        <li><b>Result:</b> improved safety envelope and auditability of behavior (deterministic).</li>
+      </ul>
+      <div class="schematic">Schematic placeholder: bounded control loop response</div>
+    </article>
+
+    <article class="card">
+      <div class="cardHead">
+        <div class="icon">AU</div>
+        <div>
+          <h2>Autonomous systems & robotics</h2>
+          <p class="muted">Vehicles, drones, industrial robots, safety controllers</p>
+        </div>
+      </div>
+      <ul>
+        <li><b>Failure situations:</b> sensor uncertainty leading to unstable actuation, planner oscillations, control saturation.</li>
+        <li><b>Structural effect:</b> deterministic constraints that keep trajectories within verified bounds.</li>
+        <li><b>Scope:</b> complements existing safety layers; does not replace certification processes.</li>
+      </ul>
+      <div class="schematic">Schematic placeholder: bounded trajectory / constrained actuation</div>
+    </article>
+
+    <article class="card">
+      <div class="cardHead">
+        <div class="icon">EN</div>
+        <div>
+          <h2>Energy, grid control & industrial utilities</h2>
+          <p class="muted">SCADA, grid balancing, plant control, protection logic</p>
+        </div>
+      </div>
+      <ul>
+        <li><b>Failure situations:</b> instability propagation across controllers, oscillatory recovery, local faults cascading system-wide.</li>
+        <li><b>Structural effect:</b> prevents propagation beyond origin; bounds recovery dynamics.</li>
+        <li><b>Outcome:</b> reduced systemic risk during disturbances and switching events.</li>
+      </ul>
+      <div class="schematic">Schematic placeholder: disturbance containment regions</div>
+    </article>
+
+    <article class="card">
+      <div class="cardHead">
+        <div class="icon">AV</div>
+        <div>
+          <h2>Aviation & safety-critical embedded</h2>
+          <p class="muted">Avionics subsystems, mission computers, control surfaces</p>
+        </div>
+      </div>
+      <ul>
+        <li><b>Failure situations:</b> unbounded escalation paths, timing collapse under rare edge conditions, fault cascades.</li>
+        <li><b>Structural effect:</b> deterministic bounded behavior suitable for verification and repeatability.</li>
+        <li><b>Integration:</b> incremental; supports existing safety architectures.</li>
+      </ul>
+      <div class="schematic">Schematic placeholder: bounded timing and state space</div>
+    </article>
+
+    <article class="card">
+      <div class="cardHead">
+        <div class="icon">CS</div>
+        <div>
+          <h2>Cybersecurity & high-assurance compute</h2>
+          <p class="muted">Isolation layers, sandboxed workloads, integrity constraints</p>
+        </div>
+      </div>
+      <ul>
+        <li><b>Failure situations:</b> malware processes attempting runaway resource usage, denial-of-service amplification, uncontrolled propagation.</li>
+        <li><b>Structural effect:</b> constrains system evolution so untrusted behavior cannot scale beyond allowed bounds.</li>
+        <li><b>Note:</b> does not “detect” malware; it limits worst-case impact structurally.</li>
+      </ul>
+      <div class="schematic">Schematic placeholder: constrained authority expansion</div>
+    </article>
+
+    <article class="card">
+      <div class="cardHead">
+        <div class="icon">LG</div>
+        <div>
+          <h2>Logistics & large-scale operations</h2>
+          <p class="muted">Routing, warehousing, fleet systems, scheduling</p>
+        </div>
+      </div>
+      <ul>
+        <li><b>Failure situations:</b> planning oscillations, cascading retries across services, runaway queueing under surges.</li>
+        <li><b>Structural effect:</b> bounded recovery and non-propagating instability across workflow chains.</li>
+        <li><b>Result:</b> more predictable operational behavior under stress conditions.</li>
+      </ul>
+      <div class="schematic">Schematic placeholder: bounded workflow propagation</div>
+    </article>
+
+    <article class="card">
+      <div class="cardHead">
+        <div class="icon">IO</div>
+        <div>
+          <h2>IoT, edge & constrained devices</h2>
+          <p class="muted">Gateways, sensors, control units, embedded runtimes</p>
+        </div>
+      </div>
+      <ul>
+        <li><b>Failure situations:</b> resource exhaustion, watchdog loops, unstable control tasks under uncertainty.</li>
+        <li><b>Structural effect:</b> deterministic bounded resource usage; prevents runaway tasks from destabilizing the device.</li>
+        <li><b>Outcome:</b> predictable, repeatable behavior suitable for validation.</li>
+      </ul>
+      <div class="schematic">Schematic placeholder: bounded resource envelope</div>
+    </article>
+  </section>
+
+  <section class="callout">
+    <h3>Claims framing</h3>
+    <p>
+      NEST is a deterministic, non-adaptive system constraint. It does not rely on prediction, learning, or feedback.
+      Its effects are structural: when enabled, certain categories of instability cannot propagate or sustain, regardless of domain.
+      Observable improvements depend on context and workload; no performance or outcome guarantees are implied beyond bounded behavior and non-propagation of instability.
+    </p>
+  </section>
 </main>
 
-<footer>
-  <p>© 2025 NEST Systems. All rights reserved.</p>
+<footer class="footer">
+  <div class="wrap footerInner">
+    <div class="footLeft">© <span id="y"></span> NEST Systems</div>
+    <div class="footRight">
+      <a href="impressum.html">Impressum</a>
+    </div>
+  </div>
 </footer>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
