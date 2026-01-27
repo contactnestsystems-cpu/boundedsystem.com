@@ -1,6 +1,4 @@
-﻿/* script.js — tiny polish only (no dependencies) */
-(() => {
-  // Smooth anchor scrolling
+﻿(() => {
   document.addEventListener("click", (e) => {
     const a = e.target.closest("a[href^='#']");
     if (!a) return;

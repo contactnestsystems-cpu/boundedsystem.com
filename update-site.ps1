@@ -1,0 +1,152 @@
+﻿$ErrorActionPreference="Stop"
+$SiteTitle="NEST"
+$Tagline="Deterministic system constraints"
+$Nav=@(
+  @{t="Home";h="index.html"},
+  @{t="Product";h="product.html"},
+  @{t="Industries";h="industries.html"},
+  @{t="Contact";h="contact.html"},
+  @{t="Impressum";h="impressum.html"}
+)
+
+function NavHtml([string]$active){
+  ($Nav | ForEach-Object {
+    $cls = if ($_.h -eq $active) { "active" } else { "" }
+    "<a class=""$cls"" href=""$($_.h)"">$($_.t)</a>"
+  }) -join ""
+}
+
+function Page([string]$active,[string]$title,[string]$desc,[string]$body){
+@"
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>$title</title>
+  <meta name="description" content="$desc" />
+  <link rel="stylesheet" href="style.css?v=4" />
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbarInner">
+    <a class="brand" href="index.html" aria-label="Home">
+      <span class="mark" aria-hidden="true"></span>
+      <span class="brandText">
+        <span class="brandName">$SiteTitle</span>
+        <span class="brandTag">$Tagline</span>
+      </span>
+    </a>
+    <nav class="nav">
+      $(NavHtml $active)
+    </nav>
+  </div>
+</header>
+
+<main class="wrap page">
+$body
+</main>
+
+<footer class="footer">
+  <div class="wrap footerInner">
+    <div>© <span id="y"></span> $SiteTitle</div>
+    <div class="footerLinks"><a href="impressum.html">Impressum</a></div>
+  </div>
+</footer>
+
+<script src="script.js?v=4"></script>
+<script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>
+"@
+}
+
+function RedirectPage([string]$to){
+@"
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="refresh" content="0; url=$to">
+<link rel="canonical" href="$to">
+<title>Redirecting…</title>
+</head><body>
+<p>Redirecting… <a href="$to">Continue</a></p>
+<script>location.replace("$to");</script>
+</body></html>
+"@
+}
+
+# STYLE
+Set-Content -Encoding UTF8 -Path .\style.css -Value @'
+:root{
+  --bg:#f6f8fb; --text:#15202b; --muted:#5d7286; --line:#dbe3ec;
+  --teal:#0b7a7a; --teal2:#0a5f66;
+  --shadow:0 12px 34px rgba(20,35,45,.08);
+  --shadow2:0 8px 18px rgba(20,35,45,.10);
+  --r:18px;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica Neue,Helvetica,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(1200px 650px at 15% -15%, rgba(11,122,122,.12), transparent 58%),
+    radial-gradient(900px 520px at 95% 10%, rgba(11,122,122,.10), transparent 55%),
+    var(--bg);
+}
+.wrap{max-width:1160px;margin:0 auto;padding:0 18px}
+.page{padding:24px 0 38px}
+.topbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbarInner{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.mark{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg, rgba(11,122,122,.24), rgba(11,122,122,.06));border:1px solid rgba(11,122,122,.28);box-shadow:var(--shadow2)}
+.brandText{display:flex;flex-direction:column;line-height:1.05}
+.brandName{font-weight:800;letter-spacing:.18em}
+.brandTag{font-size:12px;color:var(--muted)}
+.nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+.nav a{color:var(--muted);text-decoration:none;font-size:13px;padding:8px 10px;border-radius:12px;border:1px solid transparent}
+.nav a:hover{color:var(--text);border-color:var(--line);background:rgba(255,255,255,.65)}
+.nav a.active{color:var(--teal2);border-color:rgba(11,122,122,.22);background:rgba(11,122,122,.08)}
+h1{margin:12px 0 10px;font-size:38px;letter-spacing:-.03em;line-height:1.08}
+h2{margin:0;font-size:16px;letter-spacing:-.01em}
+.lead{margin:0 0 14px;color:var(--muted);font-size:15px;line-height:1.7}
+.muted{margin:6px 0 0;color:var(--muted);font-size:13px;line-height:1.6}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:16px;align-items:stretch;margin-top:10px}
+.heroLeft,.heroRight{background:rgba(255,255,255,.78);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:22px}
+.eyebrow{display:inline-block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal2);background:rgba(11,122,122,.08);border:1px solid rgba(11,122,122,.18);padding:8px 10px;border-radius:999px}
+.chipRow{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chip{font-size:12px;padding:7px 10px;border-radius:999px;border:1px solid rgba(11,122,122,.18);background:rgba(11,122,122,.07);color:var(--teal2)}
+.ctaRow{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.btnPrimary,.btnGhost{display:inline-flex;align-items:center;justify-content:center;padding:11px 14px;border-radius:14px;text-decoration:none;font-weight:700;border:1px solid transparent}
+.btnPrimary{background:linear-gradient(135deg, rgba(11,122,122,.92), rgba(10,95,102,.92));color:#fff;box-shadow:var(--shadow2)}
+.btnPrimary:hover{filter:brightness(1.02)}
+.btnGhost{background:rgba(255,255,255,.7);color:var(--teal2);border-color:rgba(11,122,122,.22)}
+.btnGhost:hover{background:rgba(11,122,122,.06)}
+.fineprint{margin-top:14px;color:var(--muted);font-size:12px;line-height:1.6}
+.panel{border-radius:16px;border:1px solid rgba(11,122,122,.22);background:rgba(255,255,255,.60);padding:14px}
+.panelTitle{font-size:12px;color:var(--muted);margin-bottom:10px}
+.panelNote{font-size:12px;color:var(--muted);margin-top:10px}
+.schem{width:100%;height:auto;display:block}
+.grid{margin-top:16px;display:grid;grid-template-columns:repeat(2, minmax(0,1fr));gap:14px}
+.card{background:rgba(255,255,255,.86);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:18px}
+.cardHead{display:flex;gap:12px;align-items:flex-start;margin-bottom:10px}
+.icon{width:42px;height:42px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg, rgba(11,122,122,.18), rgba(11,122,122,.06));border:1px solid rgba(11,122,122,.25);color:var(--teal2);font-weight:900;letter-spacing:.08em}
+.bullets{margin:12px 0 0;padding-left:18px;color:var(--muted);font-size:13px;line-height:1.65}
+.bullets li{margin:6px 0}
+.bullets b{color:var(--text);font-weight:750}
+.schematic{margin-top:12px;border-radius:16px;border:1px dashed rgba(93,114,134,.45);background:linear-gradient(90deg, rgba(11,122,122,.07), rgba(255,255,255,0)), rgba(255,255,255,.55);color:var(--muted);padding:14px;font-size:12px}
+.callout{margin-top:16px;background:rgba(11,122,122,.07);border:1px solid rgba(11,122,122,.18);border-radius:var(--r);padding:18px}
+.callout h3{margin:0 0 8px;font-size:13px;color:var(--teal2);letter-spacing:.12em;text-transform:uppercase}
+.callout p{margin:0;color:var(--muted);font-size:13px;line-height:1.7}
+.footer{border-top:1px solid var(--line);background:rgba(255,255,255,.78)}
+.footerInner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0;color:var(--muted);font-size:13px}
+.footerLinks a{color:var(--teal2);text-decoration:none;padding:8px 10px;border-radius:12px;border:1px solid rgba(11,122,122,.18);background:rgba(11,122,122,.06)}
+.footerLinks a:hover{background:rgba(11,122,122,.10)}
+@media (max-width:980px){
+  .topbarInner{flex-direction:column;align-items:flex-start}
+  .nav{justify-content:flex-start}
+  .hero{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr}
+  h1{font-size:32px}
+}
