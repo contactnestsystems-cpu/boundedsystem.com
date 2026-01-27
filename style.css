@@ -1,0 +1,8 @@
+﻿body { font-family: Arial; background-color: #f9f9f9; color: #333; margin: 0; }
+header, footer { background-color: #ddd; padding: 1em; text-align: center; }
+nav ul { list-style: none; display: flex; justify-content: center; gap: 1em; padding: 0; }
+main { max-width: 900px; margin: auto; padding: 2em; }
+footer a { color: #006666; text-decoration: none; }
+.slider { overflow: hidden; }
+.slides { display: flex; transition: transform 0.5s; }
+.slide img { width: 100%; }
