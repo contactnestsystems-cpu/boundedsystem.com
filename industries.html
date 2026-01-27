@@ -1,21 +1,22 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Industries — NEST Systems</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Industries — NEST</title>
+  <meta name="description" content="Industry use-cases framed as failure situations and structural effects: bounded behavior and non-propagating instability." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 <header class="topbar">
-  <div class="wrap">
-    <div class="brand">
-      <div class="mark"></div>
-      <div class="brandtext">
-        <div class="brandname">NEST</div>
-        <div class="brandtag">Deterministic system constraints</div>
-      </div>
-    </div>
+  <div class="wrap topbarInner">
+    <a class="brand" href="index.html" aria-label="NEST Home">
+      <span class="mark" aria-hidden="true"></span>
+      <span class="brandText">
+        <span class="brandName">NEST</span>
+        <span class="brandTag">Deterministic system constraints</span>
+      </span>
+    </a>
     <nav class="nav">
       <a href="index.html">Home</a>
       <a href="what.html">What NEST Is</a>
@@ -31,35 +32,39 @@
 </header>
 
 <main class="wrap page">
-  <section class="hero">
-    <div class="heroText">
-      <h1>Industries</h1>
+  <section class="hero small">
+    <div class="heroLeft">
+      <div class="eyebrow">INDUSTRY APPLICATIONS</div>
+      <h1>Same structural effect. Different failure surfaces.</h1>
       <p class="lead">
         NEST is domain-agnostic because it constrains system evolution rather than business logic.
-        The examples below describe recognizable failure situations and the structural effect: bounded behavior and non-propagating instability.
+        Below: recognizable failure situations and structural effects, without disclosing implementation details.
       </p>
-      <div class="chips">
+      <div class="chipRow">
+        <span class="chip">Bound worst-case</span>
+        <span class="chip">Prevent propagation</span>
         <span class="chip">Deterministic</span>
-        <span class="chip">Bounded</span>
         <span class="chip">Non-adaptive</span>
-        <span class="chip">No prediction</span>
-        <span class="chip">No monitoring requirement</span>
       </div>
     </div>
-    <div class="heroPanel">
-      <div class="miniDiagram">
-        <div class="miniTitle">Illustrative</div>
-        <div class="miniRow">
-          <div class="miniBox">Local disturbance</div>
-          <div class="miniArrow">→</div>
-          <div class="miniBox ok">Contained region</div>
-        </div>
-        <div class="miniHint">Shows structure only, not measured data.</div>
+
+    <div class="heroRight">
+      <div class="panel">
+        <div class="panelTitle">Illustrative schematic</div>
+        <svg class="schem" viewBox="0 0 520 260" role="img" aria-label="Illustrative tail bounding schematic">
+          <rect x="16" y="18" width="488" height="224" rx="18" fill="rgba(255,255,255,.55)" stroke="rgba(219,227,236,1)"/>
+          <text x="34" y="54" fill="rgba(93,114,134,1)" font-size="12">Latency distribution (illustrative)</text>
+          <path d="M50 200 C90 170, 120 150, 150 120 C180 90, 220 70, 280 66 C340 62, 400 86, 466 126" fill="none" stroke="rgba(93,114,134,.70)" stroke-width="3"/>
+          <path d="M50 200 C90 180, 120 166, 150 150 C200 122, 260 114, 310 114 C360 114, 410 114, 466 114" fill="none" stroke="rgba(11,122,122,.70)" stroke-width="3"/>
+          <line x1="310" y1="72" x2="310" y2="210" stroke="rgba(11,122,122,.25)" stroke-width="2" stroke-dasharray="5 6"/>
+          <text x="322" y="92" fill="rgba(10,95,102,1)" font-size="12" font-weight="700">Bounded tail</text>
+        </svg>
+        <div class="panelNote">Structure only. Not measured data.</div>
       </div>
     </div>
   </section>
 
-  <section class="grid">
+  <section class="grid" id="financial">
     <article class="card">
       <div class="cardHead">
         <div class="icon">FX</div>
@@ -68,12 +73,12 @@
           <p class="muted">Order routing, risk checks, venue gateways, feed handlers</p>
         </div>
       </div>
-      <ul>
-        <li><b>Failure situations:</b> retry storms, queue avalanches, lock contention, tail latency spikes under bursts.</li>
-        <li><b>Structural effect:</b> prevents escalation/sustaining of instability; keeps disturbances local to the origin path.</li>
-        <li><b>What it is not:</b> not a latency “optimizer”; any speed/latency changes are workload-dependent side effects.</li>
+      <ul class="bullets">
+        <li><b>Failure situations:</b> retry storms; queue avalanches; lock contention; tail latency spikes under bursts; GC/allocator pressure spirals.</li>
+        <li><b>Structural effect:</b> prevents escalation from sustaining; contains disturbances to origin paths; bounds worst-case behaviors.</li>
+        <li><b>Notes:</b> not a “latency optimizer”; any latency changes depend on workload and integration boundary.</li>
       </ul>
-      <div class="schematic">Schematic placeholder: bounded tail distribution / local containment</div>
+      <div class="schematic">Schematic placeholder: tail containment + bounded queue growth</div>
     </article>
 
     <article class="card">
@@ -81,31 +86,31 @@
         <div class="icon">BK</div>
         <div>
           <h2>Banking, payments & mortgage platforms</h2>
-          <p class="muted">Core banking, payment rails, credit decision workflows</p>
+          <p class="muted">Core banking, payment rails, credit workflows, settlement systems</p>
         </div>
       </div>
-      <ul>
-        <li><b>Failure situations:</b> cascading timeouts across services, runaway retries, inconsistent partial writes, recovery oscillations.</li>
-        <li><b>Structural effect:</b> bounds worst-case behavior so that failures do not propagate across dependency graphs.</li>
-        <li><b>Outcome:</b> smoother recovery characteristics and reduced “blast radius” during incidents.</li>
+      <ul class="bullets">
+        <li><b>Failure situations:</b> cascading timeouts; partial failure amplification across microservices; compensating-transaction storms; recovery oscillation.</li>
+        <li><b>Structural effect:</b> bounds recovery dynamics; prevents cross-dependency propagation; reduces incident blast radius.</li>
+        <li><b>Outcome shape:</b> fewer systemic “all-red” modes; more predictable degradation envelopes.</li>
       </ul>
       <div class="schematic">Schematic placeholder: dependency graph with bounded propagation</div>
     </article>
 
-    <article class="card">
+    <article class="card" id="cloud">
       <div class="cardHead">
         <div class="icon">CL</div>
         <div>
           <h2>Cloud platforms & SRE-critical services</h2>
-          <p class="muted">Multi-tenant systems, orchestration, control planes</p>
+          <p class="muted">Multi-tenant systems, orchestration, control planes, infra gateways</p>
         </div>
       </div>
-      <ul>
-        <li><b>Failure situations:</b> thundering herds, autoscaler oscillations, control-plane overload, cascading brownouts.</li>
-        <li><b>Structural effect:</b> deterministic constraints that preclude unbounded amplification under uncertainty.</li>
-        <li><b>Result:</b> fewer large-scale incident modes; containment of tenant-level disturbances.</li>
+      <ul class="bullets">
+        <li><b>Failure situations:</b> thundering herds; autoscaler oscillations; control-plane overload; cascading brownouts; overload feedback loops.</li>
+        <li><b>Structural effect:</b> precludes unbounded amplification; keeps tenant disturbances local; bounds worst-case escalation paths.</li>
+        <li><b>Notes:</b> complements rate-limits/circuit breakers by constraining evolution, not just traffic.</li>
       </ul>
-      <div class="schematic">Schematic placeholder: bounded control-plane evolution</div>
+      <div class="schematic">Schematic placeholder: constrained control-plane evolution</div>
     </article>
 
     <article class="card">
@@ -113,34 +118,34 @@
         <div class="icon">TL</div>
         <div>
           <h2>Telecom, VoIP & real-time media</h2>
-          <p class="muted">SIP/IMS, PBX, RTP pipelines, session controllers</p>
+          <p class="muted">SIP/IMS, PBX, RTP pipelines, session border controllers</p>
         </div>
       </div>
-      <ul>
-        <li><b>Failure situations:</b> jitter/queue blowups, session storms, signaling cascades, CPU runaway under malformed traffic.</li>
-        <li><b>Structural effect:</b> bounds degradation and prevents systemic collapse from localized anomalies.</li>
-        <li><b>Notes:</b> does not “predict” call quality; it constrains instability propagation.</li>
+      <ul class="bullets">
+        <li><b>Failure situations:</b> session storms; jitter tail blowups; signaling cascades; CPU runaway under malformed traffic; allocator pressure.</li>
+        <li><b>Structural effect:</b> bounds degradation; prevents systemic collapse from localized anomalies; keeps recovery non-oscillatory.</li>
+        <li><b>Notes:</b> does not “predict” QoE; it constrains instability propagation.</li>
       </ul>
-      <div class="schematic">Schematic placeholder: constrained flow / bounded jitter tail</div>
+      <div class="schematic">Schematic placeholder: constrained flow + bounded jitter tail</div>
     </article>
 
-    <article class="card">
+    <article class="card" id="critical">
       <div class="cardHead">
         <div class="icon">MD</div>
         <div>
-          <h2>Medical devices & hospital infrastructure</h2>
-          <p class="muted">Infusion systems, monitoring, clinical workflow software</p>
+          <h2>Medical devices & clinical infrastructure</h2>
+          <p class="muted">Infusion, monitoring, imaging pipelines, patient workflow systems</p>
         </div>
       </div>
-      <ul>
-        <li><b>Failure situations:</b> unsafe oscillations, runaway control loops, cascading alarms, queue lockups in patient flow systems.</li>
-        <li><b>Structural effect:</b> enforces bounded action under uncertainty; prevents sustained escalation.</li>
-        <li><b>Result:</b> improved safety envelope and auditability of behavior (deterministic).</li>
+      <ul class="bullets">
+        <li><b>Failure situations:</b> unsafe oscillations; runaway control loops; alarm floods; queue lockups in clinical workflow.</li>
+        <li><b>Structural effect:</b> enforces bounded action under uncertainty; prevents sustained escalation; improves auditability (deterministic).</li>
+        <li><b>Scope:</b> complements existing safety engineering; does not replace regulatory validation.</li>
       </ul>
-      <div class="schematic">Schematic placeholder: bounded control loop response</div>
+      <div class="schematic">Schematic placeholder: bounded control response envelope</div>
     </article>
 
-    <article class="card">
+    <article class="card" id="autonomy">
       <div class="cardHead">
         <div class="icon">AU</div>
         <div>
@@ -148,12 +153,12 @@
           <p class="muted">Vehicles, drones, industrial robots, safety controllers</p>
         </div>
       </div>
-      <ul>
-        <li><b>Failure situations:</b> sensor uncertainty leading to unstable actuation, planner oscillations, control saturation.</li>
-        <li><b>Structural effect:</b> deterministic constraints that keep trajectories within verified bounds.</li>
-        <li><b>Scope:</b> complements existing safety layers; does not replace certification processes.</li>
+      <ul class="bullets">
+        <li><b>Failure situations:</b> sensor uncertainty → unstable actuation; planner oscillation; control saturation; edge-case timing collapse.</li>
+        <li><b>Structural effect:</b> keeps trajectories within verified bounds; prevents escalation from sustaining; deterministic repeatability.</li>
+        <li><b>Notes:</b> integrates incrementally; supports certification workflows by reducing non-determinism.</li>
       </ul>
-      <div class="schematic">Schematic placeholder: bounded trajectory / constrained actuation</div>
+      <div class="schematic">Schematic placeholder: bounded trajectory + constrained actuation</div>
     </article>
 
     <article class="card">
@@ -164,10 +169,10 @@
           <p class="muted">SCADA, grid balancing, plant control, protection logic</p>
         </div>
       </div>
-      <ul>
-        <li><b>Failure situations:</b> instability propagation across controllers, oscillatory recovery, local faults cascading system-wide.</li>
-        <li><b>Structural effect:</b> prevents propagation beyond origin; bounds recovery dynamics.</li>
-        <li><b>Outcome:</b> reduced systemic risk during disturbances and switching events.</li>
+      <ul class="bullets">
+        <li><b>Failure situations:</b> instability propagation across controllers; oscillatory recovery; local faults cascading system-wide.</li>
+        <li><b>Structural effect:</b> prevents propagation beyond origin; bounds recovery dynamics; reduces systemic risk under disturbances.</li>
+        <li><b>Outcome shape:</b> stable containment regions during switching events.</li>
       </ul>
       <div class="schematic">Schematic placeholder: disturbance containment regions</div>
     </article>
@@ -177,15 +182,15 @@
         <div class="icon">AV</div>
         <div>
           <h2>Aviation & safety-critical embedded</h2>
-          <p class="muted">Avionics subsystems, mission computers, control surfaces</p>
+          <p class="muted">Avionics subsystems, mission computers, control loops</p>
         </div>
       </div>
-      <ul>
-        <li><b>Failure situations:</b> unbounded escalation paths, timing collapse under rare edge conditions, fault cascades.</li>
-        <li><b>Structural effect:</b> deterministic bounded behavior suitable for verification and repeatability.</li>
-        <li><b>Integration:</b> incremental; supports existing safety architectures.</li>
+      <ul class="bullets">
+        <li><b>Failure situations:</b> unbounded escalation paths; timing collapse under rare edges; fault cascades across subsystems.</li>
+        <li><b>Structural effect:</b> deterministic bounded behavior suitable for verification and repeatability; non-propagating fault surfaces.</li>
+        <li><b>Integration:</b> incremental; complements existing safety architectures.</li>
       </ul>
-      <div class="schematic">Schematic placeholder: bounded timing and state space</div>
+      <div class="schematic">Schematic placeholder: bounded timing + state space</div>
     </article>
 
     <article class="card">
@@ -196,10 +201,10 @@
           <p class="muted">Isolation layers, sandboxed workloads, integrity constraints</p>
         </div>
       </div>
-      <ul>
-        <li><b>Failure situations:</b> malware processes attempting runaway resource usage, denial-of-service amplification, uncontrolled propagation.</li>
+      <ul class="bullets">
+        <li><b>Failure situations:</b> untrusted processes attempting runaway resource usage; amplification loops; uncontrolled propagation effects.</li>
         <li><b>Structural effect:</b> constrains system evolution so untrusted behavior cannot scale beyond allowed bounds.</li>
-        <li><b>Note:</b> does not “detect” malware; it limits worst-case impact structurally.</li>
+        <li><b>Notes:</b> does not “detect” malware; it limits worst-case impact structurally.</li>
       </ul>
       <div class="schematic">Schematic placeholder: constrained authority expansion</div>
     </article>
@@ -212,10 +217,10 @@
           <p class="muted">Routing, warehousing, fleet systems, scheduling</p>
         </div>
       </div>
-      <ul>
-        <li><b>Failure situations:</b> planning oscillations, cascading retries across services, runaway queueing under surges.</li>
-        <li><b>Structural effect:</b> bounded recovery and non-propagating instability across workflow chains.</li>
-        <li><b>Result:</b> more predictable operational behavior under stress conditions.</li>
+      <ul class="bullets">
+        <li><b>Failure situations:</b> planning oscillations; cascading retries across services; runaway queueing under surges; brittle recovery loops.</li>
+        <li><b>Structural effect:</b> bounded recovery and non-propagating instability across workflow chains; predictable degradation envelope.</li>
+        <li><b>Outcome shape:</b> fewer system-wide stalls during peak events.</li>
       </ul>
       <div class="schematic">Schematic placeholder: bounded workflow propagation</div>
     </article>
@@ -228,10 +233,10 @@
           <p class="muted">Gateways, sensors, control units, embedded runtimes</p>
         </div>
       </div>
-      <ul>
-        <li><b>Failure situations:</b> resource exhaustion, watchdog loops, unstable control tasks under uncertainty.</li>
+      <ul class="bullets">
+        <li><b>Failure situations:</b> resource exhaustion; watchdog loops; unstable control tasks; timing jitter under uncertainty.</li>
         <li><b>Structural effect:</b> deterministic bounded resource usage; prevents runaway tasks from destabilizing the device.</li>
-        <li><b>Outcome:</b> predictable, repeatable behavior suitable for validation.</li>
+        <li><b>Outcome shape:</b> repeatable behavior suitable for validation.</li>
       </ul>
       <div class="schematic">Schematic placeholder: bounded resource envelope</div>
     </article>
@@ -241,23 +246,18 @@
     <h3>Claims framing</h3>
     <p>
       NEST is a deterministic, non-adaptive system constraint. It does not rely on prediction, learning, or feedback.
-      Its effects are structural: when enabled, certain categories of instability cannot propagate or sustain, regardless of domain.
-      Observable improvements depend on context and workload; no performance or outcome guarantees are implied beyond bounded behavior and non-propagation of instability.
+      Observable effects depend on system context and workload. No performance or outcome guarantees are implied beyond bounded behavior and non-propagation of instability.
     </p>
   </section>
 </main>
 
 <footer class="footer">
   <div class="wrap footerInner">
-    <div class="footLeft">© <span id="y"></span> NEST Systems</div>
-    <div class="footRight">
-      <a href="impressum.html">Impressum</a>
-    </div>
+    <div>© <span id="y"></span> NEST Systems</div>
+    <div class="footerLinks"><a href="impressum.html">Impressum</a></div>
   </div>
 </footer>
 
-<script>
-  document.getElementById("y").textContent = new Date().getFullYear();
-</script>
+<script>document.getElementById("y").textContent = new Date().getFullYear();</script>
 </body>
 </html>
