@@ -34,7 +34,7 @@ function Page([string]$active,[string]$title,[string]$desc,[string]$body){
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>$title</title>
   <meta name="description" content="$desc" />
-  <link rel="stylesheet" href="style.css?v=7" />
+  <link rel="stylesheet" href="style.css?v=8" />
 </head>
 <body>
 <header class="topbar">
@@ -63,7 +63,7 @@ $body
   </div>
 </footer>
 
-<script src="script.js?v=7"></script>
+<script src="script.js?v=8"></script>
 </body>
 </html>
 "@
@@ -272,7 +272,6 @@ WriteUtf8 ".\script.js" @"
 })();
 "@
 
-# ---------------- CONTENT (claim-safe language rules enforced) ----------------
 $LegalBlock = "NEST introduces deterministic structural constraints on system behavior. Observable effects depend on system context and workload. No performance or outcome guarantees are implied beyond bounded behavior and non-propagation of instability."
 
 $HomeBody = @"
@@ -327,7 +326,7 @@ $HomeBody = @"
 </section>
 
 <section class="callout">
-  <h3>Claim-safe framing</h3>
+  <h3> framing</h3>
   <p>$LegalBlock</p>
 </section>
 "@
@@ -561,7 +560,7 @@ $ImpressumBody = @"
   </article>
 
   <article class="card">
-    <div class="cardHead"><div class="icon">DS</div><div><h2>Disclaimer</h2><div class="muted">Claim safety</div></div></div>
+    <div class="cardHead"><div class="icon">DS</div><div><h2>Disclaimer</h2><div class="muted">Scope</div></div></div>
     <ul class="bullets">
       <li>Information is provided for general informational purposes.</li>
       <li>No warranties as to completeness or accuracy.</li>
@@ -573,7 +572,7 @@ $ImpressumBody = @"
 
 # ---------------- WRITE PAGES ----------------
 WriteUtf8 ".\index.html"      (Page "index.html"      "NEST — Deterministic System Constraints" "Deterministic, non-adaptive constraint layer that bounds worst-case behavior and prevents propagation of instability." $HomeBody)
-WriteUtf8 ".\product.html"    (Page "product.html"    "Product — NEST" "Product overview: deterministic, bounded, non-adaptive constraint layer; claim-safe framing." $ProductBody)
+WriteUtf8 ".\product.html"    (Page "product.html"    "Product — NEST" "Product overview: deterministic, bounded, non-adaptive constraint layer;  framing." $ProductBody)
 WriteUtf8 ".\industries.html" (Page "industries.html" "Industries — NEST" "Industry examples framed as failure situations and structural effects; illustrative only." $IndustriesBody)
 WriteUtf8 ".\contact.html"    (Page "contact.html"    "Contact — NEST" "Serious inquiries; NDA-first engagement." $ContactBody)
 WriteUtf8 ".\impressum.html"  (Page "impressum.html"  "Impressum — NEST" "Provider information and legal notice." $ImpressumBody)
@@ -609,3 +608,4 @@ WriteUtf8 ".\404.html" (Page "index.html" "Not found — NEST" "Page not found."
 "@)
 
 "OK"
+
