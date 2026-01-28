@@ -1,11 +1,11 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>NEST — Deterministic System Constraints</title>
-  <meta name="description" content="Deterministic, non-adaptive system constraint layer that bounds worst-case behavior and prevents instability from propagating." />
-  <link rel="stylesheet" href="style.css?v=5" />
+  <meta name="description" content="NEST is a deterministic, non-adaptive system constraint layer that bounds worst-case behavior and prevents instability from propagating." />
+  <link rel="stylesheet" href="style.css?v=7" />
 </head>
 <body>
 <header class="topbar">
@@ -17,46 +17,50 @@
         <span class="brandTag">Deterministic system constraints</span>
       </span>
     </a>
-    <nav class="nav"><a class="active" href="index.html">Home</a><a class="" href="product.html">Product</a><a class="" href="industries.html">Industries</a><a class="" href="contact.html">Contact</a><a class="" href="impressum.html">Impressum</a></nav>
+    <nav class="nav">
+      <a class="active" href="index.html">Home</a><a class="" href="product.html">What it is</a><a class="" href="industries.html">Industries</a><a class="" href="press.html">Press</a><a class="" href="contact.html">Contact</a><a class="" href="impressum.html">Impressum</a>
+    </nav>
   </div>
 </header>
 
 <main class="wrap page">
 <section class="hero">
   <div class="heroLeft">
-    <div class="eyebrow">NEXT-GEN RELIABILITY LAYER</div>
+    <div class="eyebrow">SYSTEM RELIABILITY LAYER</div>
     <h1>Bound system behavior. Prevent instability from propagating.</h1>
     <p class="lead">
       NEST is a deterministic, non-adaptive system constraint. It does not rely on prediction, learning, or feedback.
       Its effects are structural: when enabled, certain categories of instability cannot propagate or sustain.
     </p>
     <div class="chipRow">
-      <span class="chip">Deterministic</span><span class="chip">Bounded</span><span class="chip">Non-adaptive</span>
-      <span class="chip">No prediction</span><span class="chip">No monitoring requirement</span>
+      <span class="chip">Deterministic</span>
+      <span class="chip">Bounded</span>
+      <span class="chip">Prevents propagation</span>
+      <span class="chip">Non-adaptive</span>
+      <span class="chip">No prediction</span>
     </div>
     <div class="ctaRow">
-      <a class="btnPrimary" href="product.html">Product overview</a>
-      <a class="btnGhost" href="industries.html">Industry examples</a>
+      <a class="btnPrimary" href="product.html">What NEST is</a>
+      <a class="btnGhost" href="industries.html">Industry scenarios</a>
     </div>
     <div class="fineprint">
-      Observable effects depend on system context and workload. No performance or outcome guarantees are implied beyond
-      bounded behavior and non-propagation of instability.
+      NEST introduces deterministic structural constraints on system behavior. Observable effects depend on system context and workload.
+      No performance or outcome guarantees are implied beyond bounded behavior and non-propagation of instability.
     </div>
   </div>
   <div class="heroRight">
     <div class="panel">
-      <div class="panelTitle">Illustrative schematic</div>
-      <svg class="schem" viewBox="0 0 520 320" role="img" aria-label="Illustrative schematic of bounded propagation">
-        <rect x="16" y="18" width="488" height="284" rx="18" fill="rgba(255,255,255,.55)" stroke="rgba(219,227,236,1)"/>
-        <text x="34" y="54" fill="rgba(93,114,134,1)" font-size="12">Before: disturbance can amplify</text>
-        <path d="M40 92 C120 120, 160 70, 230 96 C300 122, 320 52, 390 86 C450 116, 470 70, 488 86" fill="none" stroke="rgba(93,114,134,.65)" stroke-width="3"/>
-        <text x="34" y="182" fill="rgba(93,114,134,1)" font-size="12">With NEST: bounded, non-propagating</text>
-        <rect x="40" y="202" width="210" height="64" rx="14" fill="rgba(11,122,122,.10)" stroke="rgba(11,122,122,.35)"/>
-        <text x="56" y="228" fill="rgba(10,95,102,1)" font-size="12" font-weight="700">Contained region</text>
-        <text x="56" y="250" fill="rgba(93,114,134,1)" font-size="12">Local disturbance cannot sustain</text>
-        <rect x="270" y="202" width="218" height="64" rx="14" fill="rgba(255,255,255,.55)" stroke="rgba(219,227,236,1)"/>
-        <text x="286" y="236" fill="rgba(93,114,134,1)" font-size="12">Rest of system remains stable</text>
-      </svg>
+      <div class="panelTitle">Illustrative (shape-only)</div>
+      <svg viewBox="0 0 520 170" role="img" aria-label="Illustrative tail bounding graph">
+  <rect x="12" y="12" width="496" height="146" rx="16" fill="rgba(255,255,255,.02)" stroke="rgba(255,255,255,.14)"/>
+  <text x="30" y="44" fill="rgba(168,183,200,1)" font-size="12">Illustrative: tail behavior</text>
+  <path d="M36 120 C110 118, 160 110, 220 96 C280 80, 330 66, 390 56 C450 46, 480 44, 496 44"
+        fill="none" stroke="rgba(168,183,200,.70)" stroke-width="3"/>
+  <path d="M36 120 C110 118, 160 112, 220 108 C280 106, 330 106, 390 106 C450 106, 480 106, 496 106"
+        fill="none" stroke="rgba(25,198,183,.85)" stroke-width="3"/>
+  <line x1="330" y1="54" x2="330" y2="132" stroke="rgba(25,198,183,.22)" stroke-width="2" stroke-dasharray="6 7"/>
+  <text x="344" y="72" fill="rgba(25,198,183,1)" font-size="12" font-weight="700">Bounded region</text>
+</svg>
       <div class="panelNote">Structure only. Not measured data.</div>
     </div>
   </div>
@@ -64,27 +68,27 @@
 
 <section class="grid">
   <article class="card">
-    <div class="cardHead"><div class="icon">BW</div><div><h2>Bound worst-case</h2><p class="muted">Precludes unbounded escalation under uncertainty.</p></div></div>
+    <div class="cardHead"><div class="icon">POS</div><div><h2>Positioning</h2><p class="muted">Above logic, before rules. Constrains system evolution, not business outputs.</p></div></div>
     <ul class="bullets">
-      <li><b>Target:</b> tail blow-ups, overload loops, unstable recovery.</li>
-      <li><b>Effect:</b> bounded behavior instead of runaway amplification.</li>
+      <li><b>What it does:</b> constrains, bounds, prevents propagation (structural).</li>
+      <li><b>What it is not:</b> monitoring, prediction, learning, optimization.</li>
+      <li><b>Why it matters:</b> unstable behaviors remain local and cannot sustain system-wide amplification.</li>
     </ul>
   </article>
+
   <article class="card">
-    <div class="cardHead"><div class="icon">NP</div><div><h2>Non-propagating</h2><p class="muted">Keeps failures local; reduces blast radius.</p></div></div>
+    <div class="cardHead"><div class="icon">SAFE</div><div><h2>Claim-safe guarantees</h2><p class="muted">Sober language designed to avoid hype and protect engagement.</p></div></div>
     <ul class="bullets">
-      <li><b>Target:</b> retry storms, queue avalanches, cascade chains.</li>
-      <li><b>Effect:</b> propagation is structurally prevented from sustaining.</li>
+      <li><b>Guarantees:</b> deterministic structural constraints; bounded behavior categories.</li>
+      <li><b>Not guaranteed:</b> universal % gains, prediction accuracy, domain outcomes.</li>
+      <li><b>Context dependent:</b> observable metrics vary by workload and boundary.</li>
     </ul>
   </article>
 </section>
 
 <section class="callout">
-  <h3>Claims framing</h3>
-  <p>
-    NEST introduces deterministic structural constraints on system behavior. Observable effects depend on system context and workload.
-    No performance or outcome guarantees are implied beyond bounded behavior and non-propagation of instability.
-  </p>
+  <h3>Language rules</h3>
+  <p>Always: “constrains”, “bounds”, “prevents propagation”, “structural”, “deterministic”, “non-adaptive”. Never: “AI”, “learns”, “optimizes”, “predicts”, “autonomous intelligence”, “guarantees performance”.</p>
 </section>
 </main>
 
@@ -95,7 +99,7 @@
   </div>
 </footer>
 
-<script src="script.js?v=5"></script>
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+<script src="script.js?v=7"></script>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>

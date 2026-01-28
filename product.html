@@ -1,11 +1,11 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Product — NEST</title>
-  <meta name="description" content="Product overview: deterministic, bounded, non-adaptive system constraints; claim-safe framing." />
-  <link rel="stylesheet" href="style.css?v=5" />
+  <title>What NEST Is — NEST</title>
+  <meta name="description" content="Conceptual overview: deterministic, bounded, non-adaptive system constraints; claim-safe framing." />
+  <link rel="stylesheet" href="style.css?v=7" />
 </head>
 <body>
 <header class="topbar">
@@ -17,58 +17,92 @@
         <span class="brandTag">Deterministic system constraints</span>
       </span>
     </a>
-    <nav class="nav"><a class="" href="index.html">Home</a><a class="active" href="product.html">Product</a><a class="" href="industries.html">Industries</a><a class="" href="contact.html">Contact</a><a class="" href="impressum.html">Impressum</a></nav>
+    <nav class="nav">
+      <a class="" href="index.html">Home</a><a class="active" href="product.html">What it is</a><a class="" href="industries.html">Industries</a><a class="" href="press.html">Press</a><a class="" href="contact.html">Contact</a><a class="" href="impressum.html">Impressum</a>
+    </nav>
   </div>
 </header>
 
 <main class="wrap page">
 <section class="hero">
   <div class="heroLeft">
-    <div class="eyebrow">PRODUCT OVERVIEW</div>
-    <h1>NEST: deterministic constraints under uncertainty</h1>
+    <div class="eyebrow">WHAT NEST IS</div>
+    <h1>Deterministic constraints under uncertainty</h1>
     <p class="lead">
-      NEST enforces bounds on system evolution. It operates above domain logic and before escalation, so instability remains local
-      and cannot sustain system-wide amplification.
+      NEST is a system-level constraint layer. It operates above domain logic and before escalation, so instability remains local
+      and cannot sustain system-wide amplification. It is deterministic and non-adaptive by design.
     </p>
     <div class="chipRow">
-      <span class="chip">Structural</span><span class="chip">Deterministic</span><span class="chip">Non-adaptive</span><span class="chip">Repeatable</span>
+      <span class="chip">Structural</span>
+      <span class="chip">Deterministic</span>
+      <span class="chip">Non-adaptive</span>
+      <span class="chip">Prevents propagation</span>
     </div>
+    <div class="ctaRow">
+      <a class="btnPrimary" href="industries.html">See scenarios</a>
+      <a class="btnGhost" href="press.html">Scientific status</a>
+    </div>
+    <div class="fineprint">No monitoring requirement is implied. No performance promises are made. This page is conceptual (non-technical).</div>
   </div>
   <div class="heroRight">
     <div class="panel">
-      <div class="panelTitle">Claim-safe guarantees</div>
-      <ul class="bullets" style="margin:0">
-        <li><b>Guarantees (structural):</b> bounded behavior; prevents certain instability categories from propagating or sustaining.</li>
-        <li><b>Not guaranteed:</b> universal performance gains, prediction accuracy, or domain outcomes.</li>
-        <li><b>Context-dependent:</b> observable metrics vary by workload and integration boundary.</li>
-      </ul>
-      <div class="panelNote">This page is intentionally non-disclosing: effects and positioning only.</div>
+      <div class="panelTitle">Illustrative model</div>
+      <svg viewBox="0 0 520 170" role="img" aria-label="Illustrative tail bounding graph">
+  <rect x="12" y="12" width="496" height="146" rx="16" fill="rgba(255,255,255,.02)" stroke="rgba(255,255,255,.14)"/>
+  <text x="30" y="44" fill="rgba(168,183,200,1)" font-size="12">Illustrative: tail behavior</text>
+  <path d="M36 120 C110 118, 160 110, 220 96 C280 80, 330 66, 390 56 C450 46, 480 44, 496 44"
+        fill="none" stroke="rgba(168,183,200,.70)" stroke-width="3"/>
+  <path d="M36 120 C110 118, 160 112, 220 108 C280 106, 330 106, 390 106 C450 106, 480 106, 496 106"
+        fill="none" stroke="rgba(25,198,183,.85)" stroke-width="3"/>
+  <line x1="330" y1="54" x2="330" y2="132" stroke="rgba(25,198,183,.22)" stroke-width="2" stroke-dasharray="6 7"/>
+  <text x="344" y="72" fill="rgba(25,198,183,1)" font-size="12" font-weight="700">Bounded region</text>
+</svg>
+      <div class="panelNote">Shape-based, not data-based.</div>
     </div>
   </div>
 </section>
 
 <section class="grid">
   <article class="card">
-    <div class="cardHead"><div class="icon">WS</div><div><h2>Where it sits</h2><p class="muted">Above domain logic; before escalation.</p></div></div>
+    <div class="cardHead"><div class="icon">SIT</div><div><h2>Where it sits</h2><p class="muted">A small layer placed before rules and escalation.</p></div></div>
     <ul class="bullets">
-      <li><b>Role:</b> constrains system evolution rather than outputs.</li>
-      <li><b>Operation:</b> deterministic constraints; no learning or drift.</li>
-      <li><b>Integration:</b> incremental; does not replace existing systems.</li>
+      <li><b>Above:</b> domain logic and business rules.</li>
+      <li><b>Before:</b> full-scale propagation and cascade conditions.</li>
+      <li><b>Constrains:</b> evolution of the system state under uncertainty.</li>
     </ul>
   </article>
+
   <article class="card">
-    <div class="cardHead"><div class="icon">NO</div><div><h2>What it is not</h2><p class="muted">Not monitoring, not “optimization”, not AI.</p></div></div>
+    <div class="cardHead"><div class="icon">NOT</div><div><h2>What it is not</h2><p class="muted">Explicit exclusions to avoid misinterpretation.</p></div></div>
     <ul class="bullets">
-      <li>Does not require telemetry to function.</li>
-      <li>Does not classify behavior or infer intent.</li>
-      <li>Does not promise universal % speedups.</li>
+      <li>No learning, no prediction, no classification of behavior.</li>
+      <li>No “autonomous intelligence”.</li>
+      <li>No universal % improvement claims.</li>
+    </ul>
+  </article>
+
+  <article class="card">
+    <div class="cardHead"><div class="icon">GUA</div><div><h2>Guarantees & limits</h2><p class="muted">Structural guarantees only, metrics remain contextual.</p></div></div>
+    <ul class="bullets">
+      <li><b>Guarantee:</b> bounded behavior categories and non-propagation of certain instabilities.</li>
+      <li><b>Limit:</b> does not guarantee performance, prediction, or specific outcomes.</li>
+      <li><b>Dependency:</b> observed effects depend on system boundary and workload.</li>
+    </ul>
+  </article>
+
+  <article class="card">
+    <div class="cardHead"><div class="icon">DEP</div><div><h2>Deployment model</h2><p class="muted">Incremental integration; can be enabled/disabled.</p></div></div>
+    <ul class="bullets">
+      <li>Runs as a small system-level layer.</li>
+      <li>Does not replace existing systems.</li>
+      <li>Integrates incrementally with controlled disclosure.</li>
     </ul>
   </article>
 </section>
 
 <section class="callout">
-  <h3>Non-disclosure posture</h3>
-  <p>Technical disclosure is handled under controlled engagement (NDA-first). This site does not provide implementation detail or replication enablement.</p>
+  <h3>Claim safety</h3>
+  <p>NEST introduces deterministic structural constraints on system behavior. Observable effects depend on system context and workload. No performance or outcome guarantees are implied beyond bounded behavior and non-propagation of instability.</p>
 </section>
 </main>
 
@@ -79,7 +113,7 @@
   </div>
 </footer>
 
-<script src="script.js?v=5"></script>
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+<script src="script.js?v=7"></script>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>

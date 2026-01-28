@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Not found — NEST</title>
-  <meta name="description" content="Page not found." />
+  <title>Redirecting — NEST</title>
+  <meta name="description" content="Redirecting to current content." />
   <link rel="stylesheet" href="style.css?v=7" />
 </head>
 <body>
@@ -18,7 +18,7 @@
       </span>
     </a>
     <nav class="nav">
-      <a class="active" href="index.html">Home</a><a class="" href="product.html">What it is</a><a class="" href="industries.html">Industries</a><a class="" href="press.html">Press</a><a class="" href="contact.html">Contact</a><a class="" href="impressum.html">Impressum</a>
+      <a class="" href="index.html">Home</a><a class="" href="product.html">What it is</a><a class="" href="industries.html">Industries</a><a class="" href="press.html">Press</a><a class="" href="contact.html">Contact</a><a class="" href="impressum.html">Impressum</a>
     </nav>
   </div>
 </header>
@@ -26,21 +26,24 @@
 <main class="wrap page">
 <section class="hero">
   <div class="heroLeft">
-    <div class="eyebrow">404</div>
-    <h1>Page not found</h1>
-    <p class="lead">The page you requested does not exist.</p>
+    <div class="eyebrow">PAGE MOVED</div>
+    <h1>Redirecting…</h1>
+    <p class="lead">This page is kept for compatibility. You are being redirected to the current content.</p>
     <div class="ctaRow">
-      <a class="btnPrimary" href="index.html">Go home</a>
-      <a class="btnGhost" href="product.html">What it is</a>
+      <a class="btnPrimary" href="press.html">Continue</a>
+      <a class="btnGhost" href="index.html">Home</a>
     </div>
+    <div class="fineprint">If the redirect does not happen automatically, use the Continue button.</div>
   </div>
   <div class="heroRight">
     <div class="panel">
-      <div class="panelTitle">Tip</div>
-      <div class="panelNote">Old links are redirected to the current pages. If something didn’t redirect, it may be stale.</div>
+      <div class="panelTitle">Note</div>
+      <div class="panelNote">Styled redirect to preserve homogeneity across the site.</div>
+      <div class="panelNote">Target: <span class="mono">press.html</span></div>
     </div>
   </div>
 </section>
+<script>setTimeout(()=>location.replace("press.html"), 50);</script>
 </main>
 
 <footer class="footer">

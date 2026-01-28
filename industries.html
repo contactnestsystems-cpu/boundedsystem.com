@@ -1,11 +1,11 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Industries — NEST</title>
-  <meta name="description" content="Industry examples framed as failure situations and structural effects (illustrative only)." />
-  <link rel="stylesheet" href="style.css?v=5" />
+  <meta name="description" content="Industry scenarios framed as failure situations and structural effects; illustrative only." />
+  <link rel="stylesheet" href="style.css?v=7" />
 </head>
 <body>
 <header class="topbar">
@@ -17,7 +17,9 @@
         <span class="brandTag">Deterministic system constraints</span>
       </span>
     </a>
-    <nav class="nav"><a class="" href="index.html">Home</a><a class="" href="product.html">Product</a><a class="active" href="industries.html">Industries</a><a class="" href="contact.html">Contact</a><a class="" href="impressum.html">Impressum</a></nav>
+    <nav class="nav">
+      <a class="" href="index.html">Home</a><a class="" href="product.html">What it is</a><a class="active" href="industries.html">Industries</a><a class="" href="press.html">Press</a><a class="" href="contact.html">Contact</a><a class="" href="impressum.html">Impressum</a>
+    </nav>
   </div>
 </header>
 
@@ -25,113 +27,498 @@
 <section class="hero">
   <div class="heroLeft">
     <div class="eyebrow">INDUSTRIES</div>
-    <h1>Same constraint category. Different failure surfaces.</h1>
-    <p class="lead">Examples are framed as recognizable failure situations and structural effects, without exposing implementation details.</p>
-    <div class="chipRow"><span class="chip">Bound worst-case</span><span class="chip">Prevent propagation</span><span class="chip">Deterministic</span></div>
+    <h1>Same mechanism category. Different failure surfaces.</h1>
+    <p class="lead">
+      The examples below are framed as recognizable failure situations and structural effects, without exposing implementation details.
+      Graphs are illustrative (shape-only), showing bounded behavior and non-propagation.
+    </p>
+    <div class="chipRow">
+      <span class="chip">Bound worst-case</span>
+      <span class="chip">Prevent propagation</span>
+      <span class="chip">Deterministic</span>
+      <span class="chip">Non-adaptive</span>
+    </div>
+    <div class="fineprint">No percentages. No benchmarks. No “performance guarantees”.</div>
   </div>
   <div class="heroRight">
     <div class="panel">
       <div class="panelTitle">How to read this page</div>
-      <div class="panelNote">Each card lists (1) a common failure surface and (2) the claim-safe structural effect. Illustrative only.</div>
+      <div class="panelNote">Each card: (1) typical failure surface, (2) structural effect, (3) illustrative graph.</div>
+      <div class="panelNote">All messaging is claim-safe by design.</div>
     </div>
   </div>
 </section>
 
 <section class="grid">
-  <article class="card">
-    <div class="cardHead"><div class="icon">FX</div><div><h2>Financial markets & trading infrastructure</h2><p class="muted">Gateways, routing, risk checks</p></div></div>
-    <ul class="bullets">
-      <li><b>Failure:</b> tail spikes, retry storms, queue avalanches during volatility.</li>
-      <li><b>Effect:</b> bounds worst-case behavior; prevents sustained escalation beyond origin.</li>
-    </ul>
-    <div class="schematic">Illustrative: local disturbance → bounded region → stable remainder.</div>
-  </article>
-
-  <article class="card">
-    <div class="cardHead"><div class="icon">CL</div><div><h2>Cloud platforms & SRE-critical services</h2><p class="muted">Control planes, multi-tenant services</p></div></div>
-    <ul class="bullets">
-      <li><b>Failure:</b> thundering herds, brownouts, overload feedback loops.</li>
-      <li><b>Effect:</b> precludes unbounded amplification; keeps failures local and non-sustaining.</li>
-    </ul>
-    <div class="schematic">Illustrative: overload loop → bounded response → recovery without oscillation.</div>
-  </article>
-
-  <article class="card">
-    <div class="cardHead"><div class="icon">TX</div><div><h2>Telecom & real-time networks</h2><p class="muted">VoIP cores, signaling, edge</p></div></div>
-    <ul class="bullets">
-      <li><b>Failure:</b> signaling storms, synchronized retries, congestion cascades.</li>
-      <li><b>Effect:</b> prevents propagation across network domains; reduces blast radius under stress.</li>
-    </ul>
-    <div class="schematic">Illustrative: storm origin → contained segment → protected neighbors.</div>
-  </article>
-
-  <article class="card">
-    <div class="cardHead"><div class="icon">EN</div><div><h2>Energy & utilities</h2><p class="muted">Grid control, distributed assets</p></div></div>
-    <ul class="bullets">
-      <li><b>Failure:</b> unstable recovery, oscillatory control interaction, cascade triggers.</li>
-      <li><b>Effect:</b> bounded trajectories and non-propagating instability categories (structural).</li>
-    </ul>
-    <div class="schematic">Illustrative: disturbance → bounded actuation envelope → stable recovery.</div>
-  </article>
-
-  <article class="card">
-    <div class="cardHead"><div class="icon">AV</div><div><h2>Aviation, transport & logistics systems</h2><p class="muted">Scheduling, routing, control loops</p></div></div>
-    <ul class="bullets">
-      <li><b>Failure:</b> cascading delays, backlog amplification, brittle recovery sequences.</li>
-      <li><b>Effect:</b> prevents delay cascades from sustaining system-wide; supports stable recovery dynamics.</li>
-    </ul>
-    <div class="schematic">Illustrative: local disruption → bounded backlog → controlled throughput.</div>
-  </article>
-
-  <article class="card">
-    <div class="cardHead"><div class="icon">SC</div><div><h2>Safety-critical & verification-heavy systems</h2><p class="muted">Determinism for assurance</p></div></div>
-    <ul class="bullets">
-      <li><b>Failure:</b> uncontrolled escalation paths that defeat assurance cases.</li>
-      <li><b>Effect:</b> deterministic constraints; repeatable behavior suitable for verification boundaries.</li>
-    </ul>
-    <div class="schematic">Illustrative: constrained evolution → predictable envelope → stronger assurance.</div>
-  </article>
-
-  <article class="card">
-    <div class="cardHead"><div class="icon">MF</div><div><h2>Manufacturing & industrial automation</h2><p class="muted">Lines, PLC-adjacent orchestration</p></div></div>
-    <ul class="bullets">
-      <li><b>Failure:</b> local faults triggering chain stoppages; oscillatory restart loops.</li>
-      <li><b>Effect:</b> contains the disturbance; avoids unbounded restart amplification.</li>
-    </ul>
-    <div class="schematic">Illustrative: fault cell → bounded restart regime → protected upstream/downstream.</div>
-  </article>
-
-  <article class="card">
-    <div class="cardHead"><div class="icon">HC</div><div><h2>Healthcare infrastructure & devices</h2><p class="muted">Critical workflows, deterministic operation</p></div></div>
-    <ul class="bullets">
-      <li><b>Failure:</b> overload during peak events; cascading service degradation.</li>
-      <li><b>Effect:</b> structural bounding and containment; reduces systemic risk under disturbances.</li>
-    </ul>
-    <div class="schematic">Illustrative: surge → bounded behavior → continuity of critical paths.</div>
-  </article>
-
-  <article class="card">
-    <div class="cardHead"><div class="icon">EC</div><div><h2>E-commerce & payment flows</h2><p class="muted">Checkout, fraud gates, orchestration</p></div></div>
-    <ul class="bullets">
-      <li><b>Failure:</b> cascading timeouts, retries across microservices, queue blow-ups.</li>
-      <li><b>Effect:</b> prevents cross-service escalation from sustaining; keeps issues localized.</li>
-    </ul>
-    <div class="schematic">Illustrative: timeout cascade → bounded response → stable degradation.</div>
-  </article>
-
-  <article class="card">
-    <div class="cardHead"><div class="icon">RB</div><div><h2>Autonomous & robotic systems</h2><p class="muted">Actuation under uncertainty</p></div></div>
-    <ul class="bullets">
-      <li><b>Failure:</b> unsafe escalation due to uncertainty accumulation in decision loops.</li>
-      <li><b>Effect:</b> bounded trajectories; constrains worst-case actuation behavior structurally.</li>
-    </ul>
-    <div class="schematic">Illustrative: uncertainty ↑ → constrained authority → safe envelope.</div>
-  </article>
+<article class="card">
+  <div class="cardHead">
+    <div class="icon">FX</div>
+    <div>
+      <h2>Financial trading & market infrastructure</h2>
+      <p class="muted">Order routing, risk checks, gateways</p>
+    </div>
+  </div>
+  <p class="muted">Typical failure surface: tail spikes, retry storms, queue avalanches during volatility.</p>
+  <ul class="bullets">
+    <li><b>Without:</b> local instability can amplify via retries, queues, and coupled dependencies.</li>
+    <li><b>With NEST:</b> contains escalation; prevents systemic saturation; keeps failure local.</li>
+    <li><b>Framing:</b> structural effect only (illustrative), not a performance claim.</li>
+  </ul>
+  <div class="micro">
+    <div class="microTitle">Illustrative structural graph</div>
+    <svg viewBox="0 0 520 170" role="img" aria-label="Illustrative tail bounding graph">
+  <rect x="12" y="12" width="496" height="146" rx="16" fill="rgba(255,255,255,.02)" stroke="rgba(255,255,255,.14)"/>
+  <text x="30" y="44" fill="rgba(168,183,200,1)" font-size="12">Illustrative: tail behavior</text>
+  <path d="M36 120 C110 118, 160 110, 220 96 C280 80, 330 66, 390 56 C450 46, 480 44, 496 44"
+        fill="none" stroke="rgba(168,183,200,.70)" stroke-width="3"/>
+  <path d="M36 120 C110 118, 160 112, 220 108 C280 106, 330 106, 390 106 C450 106, 480 106, 496 106"
+        fill="none" stroke="rgba(25,198,183,.85)" stroke-width="3"/>
+  <line x1="330" y1="54" x2="330" y2="132" stroke="rgba(25,198,183,.22)" stroke-width="2" stroke-dasharray="6 7"/>
+  <text x="344" y="72" fill="rgba(25,198,183,1)" font-size="12" font-weight="700">Bounded region</text>
+</svg>
+    <div class="microCap">Illustrative. Shape-based only.</div>
+  </div>
+</article>
+<article class="card">
+  <div class="cardHead">
+    <div class="icon">CL</div>
+    <div>
+      <h2>Cloud platforms & SRE-critical services</h2>
+      <p class="muted">Control planes, multi-tenant services</p>
+    </div>
+  </div>
+  <p class="muted">Typical failure surface: thundering herds, brownouts, overload loops.</p>
+  <ul class="bullets">
+    <li><b>Without:</b> local instability can amplify via retries, queues, and coupled dependencies.</li>
+    <li><b>With NEST:</b> prevents unbounded amplification; enforces bounded degradation.</li>
+    <li><b>Framing:</b> structural effect only (illustrative), not a performance claim.</li>
+  </ul>
+  <div class="micro">
+    <div class="microTitle">Illustrative structural graph</div>
+    <svg viewBox="0 0 520 170" role="img" aria-label="Illustrative tail bounding graph">
+  <rect x="12" y="12" width="496" height="146" rx="16" fill="rgba(255,255,255,.02)" stroke="rgba(255,255,255,.14)"/>
+  <text x="30" y="44" fill="rgba(168,183,200,1)" font-size="12">Illustrative: tail behavior</text>
+  <path d="M36 120 C110 118, 160 110, 220 96 C280 80, 330 66, 390 56 C450 46, 480 44, 496 44"
+        fill="none" stroke="rgba(168,183,200,.70)" stroke-width="3"/>
+  <path d="M36 120 C110 118, 160 112, 220 108 C280 106, 330 106, 390 106 C450 106, 480 106, 496 106"
+        fill="none" stroke="rgba(25,198,183,.85)" stroke-width="3"/>
+  <line x1="330" y1="54" x2="330" y2="132" stroke="rgba(25,198,183,.22)" stroke-width="2" stroke-dasharray="6 7"/>
+  <text x="344" y="72" fill="rgba(25,198,183,1)" font-size="12" font-weight="700">Bounded region</text>
+</svg>
+    <div class="microCap">Illustrative. Shape-based only.</div>
+  </div>
+</article>
+<article class="card">
+  <div class="cardHead">
+    <div class="icon">NET</div>
+    <div>
+      <h2>Telecom & carrier systems</h2>
+      <p class="muted">VoIP core, signalling, routing, mediation</p>
+    </div>
+  </div>
+  <p class="muted">Typical failure surface: signalling storms, cascading retries, control-plane saturation.</p>
+  <ul class="bullets">
+    <li><b>Without:</b> local instability can amplify via retries, queues, and coupled dependencies.</li>
+    <li><b>With NEST:</b> bounds propagation and stabilizes recovery trajectories.</li>
+    <li><b>Framing:</b> structural effect only (illustrative), not a performance claim.</li>
+  </ul>
+  <div class="micro">
+    <div class="microTitle">Illustrative structural graph</div>
+    <svg viewBox="0 0 520 170" role="img" aria-label="Illustrative tail bounding graph">
+  <rect x="12" y="12" width="496" height="146" rx="16" fill="rgba(255,255,255,.02)" stroke="rgba(255,255,255,.14)"/>
+  <text x="30" y="44" fill="rgba(168,183,200,1)" font-size="12">Illustrative: tail behavior</text>
+  <path d="M36 120 C110 118, 160 110, 220 96 C280 80, 330 66, 390 56 C450 46, 480 44, 496 44"
+        fill="none" stroke="rgba(168,183,200,.70)" stroke-width="3"/>
+  <path d="M36 120 C110 118, 160 112, 220 108 C280 106, 330 106, 390 106 C450 106, 480 106, 496 106"
+        fill="none" stroke="rgba(25,198,183,.85)" stroke-width="3"/>
+  <line x1="330" y1="54" x2="330" y2="132" stroke="rgba(25,198,183,.22)" stroke-width="2" stroke-dasharray="6 7"/>
+  <text x="344" y="72" fill="rgba(25,198,183,1)" font-size="12" font-weight="700">Bounded region</text>
+</svg>
+    <div class="microCap">Illustrative. Shape-based only.</div>
+  </div>
+</article>
+<article class="card">
+  <div class="cardHead">
+    <div class="icon">PAY</div>
+    <div>
+      <h2>Payments & banking rails</h2>
+      <p class="muted">Authorizations, ledgers, reconciliation pipelines</p>
+    </div>
+  </div>
+  <p class="muted">Typical failure surface: partial failures causing retry cascades and inconsistent state pressure.</p>
+  <ul class="bullets">
+    <li><b>Without:</b> local instability can amplify via retries, queues, and coupled dependencies.</li>
+    <li><b>With NEST:</b> keeps instability from spreading across dependent services.</li>
+    <li><b>Framing:</b> structural effect only (illustrative), not a performance claim.</li>
+  </ul>
+  <div class="micro">
+    <div class="microTitle">Illustrative structural graph</div>
+    <svg viewBox="0 0 520 170" role="img" aria-label="Illustrative tail bounding graph">
+  <rect x="12" y="12" width="496" height="146" rx="16" fill="rgba(255,255,255,.02)" stroke="rgba(255,255,255,.14)"/>
+  <text x="30" y="44" fill="rgba(168,183,200,1)" font-size="12">Illustrative: tail behavior</text>
+  <path d="M36 120 C110 118, 160 110, 220 96 C280 80, 330 66, 390 56 C450 46, 480 44, 496 44"
+        fill="none" stroke="rgba(168,183,200,.70)" stroke-width="3"/>
+  <path d="M36 120 C110 118, 160 112, 220 108 C280 106, 330 106, 390 106 C450 106, 480 106, 496 106"
+        fill="none" stroke="rgba(25,198,183,.85)" stroke-width="3"/>
+  <line x1="330" y1="54" x2="330" y2="132" stroke="rgba(25,198,183,.22)" stroke-width="2" stroke-dasharray="6 7"/>
+  <text x="344" y="72" fill="rgba(25,198,183,1)" font-size="12" font-weight="700">Bounded region</text>
+</svg>
+    <div class="microCap">Illustrative. Shape-based only.</div>
+  </div>
+</article>
+<article class="card">
+  <div class="cardHead">
+    <div class="icon">IND</div>
+    <div>
+      <h2>Industrial control & cyber-physical</h2>
+      <p class="muted">SCADA, PLC layers, supervisory loops</p>
+    </div>
+  </div>
+  <p class="muted">Typical failure surface: feedback oscillations and safe-mode storms from uncertain sensors.</p>
+  <ul class="bullets">
+    <li><b>Without:</b> local instability can amplify via retries, queues, and coupled dependencies.</li>
+    <li><b>With NEST:</b> constrains unsafe escalation; stabilizes bounded recovery.</li>
+    <li><b>Framing:</b> structural effect only (illustrative), not a performance claim.</li>
+  </ul>
+  <div class="micro">
+    <div class="microTitle">Illustrative structural graph</div>
+    <svg viewBox="0 0 520 170" role="img" aria-label="Illustrative tail bounding graph">
+  <rect x="12" y="12" width="496" height="146" rx="16" fill="rgba(255,255,255,.02)" stroke="rgba(255,255,255,.14)"/>
+  <text x="30" y="44" fill="rgba(168,183,200,1)" font-size="12">Illustrative: tail behavior</text>
+  <path d="M36 120 C110 118, 160 110, 220 96 C280 80, 330 66, 390 56 C450 46, 480 44, 496 44"
+        fill="none" stroke="rgba(168,183,200,.70)" stroke-width="3"/>
+  <path d="M36 120 C110 118, 160 112, 220 108 C280 106, 330 106, 390 106 C450 106, 480 106, 496 106"
+        fill="none" stroke="rgba(25,198,183,.85)" stroke-width="3"/>
+  <line x1="330" y1="54" x2="330" y2="132" stroke="rgba(25,198,183,.22)" stroke-width="2" stroke-dasharray="6 7"/>
+  <text x="344" y="72" fill="rgba(25,198,183,1)" font-size="12" font-weight="700">Bounded region</text>
+</svg>
+    <div class="microCap">Illustrative. Shape-based only.</div>
+  </div>
+</article>
+<article class="card">
+  <div class="cardHead">
+    <div class="icon">AIR</div>
+    <div>
+      <h2>Aviation & transport ops</h2>
+      <p class="muted">Dispatch, scheduling, ground/air coordination</p>
+    </div>
+  </div>
+  <p class="muted">Typical failure surface: local disruption triggering network-wide knock-ons.</p>
+  <ul class="bullets">
+    <li><b>Without:</b> local instability can amplify via retries, queues, and coupled dependencies.</li>
+    <li><b>With NEST:</b> bounds disruption propagation beyond origin.</li>
+    <li><b>Framing:</b> structural effect only (illustrative), not a performance claim.</li>
+  </ul>
+  <div class="micro">
+    <div class="microTitle">Illustrative structural graph</div>
+    <svg viewBox="0 0 520 170" role="img" aria-label="Illustrative tail bounding graph">
+  <rect x="12" y="12" width="496" height="146" rx="16" fill="rgba(255,255,255,.02)" stroke="rgba(255,255,255,.14)"/>
+  <text x="30" y="44" fill="rgba(168,183,200,1)" font-size="12">Illustrative: tail behavior</text>
+  <path d="M36 120 C110 118, 160 110, 220 96 C280 80, 330 66, 390 56 C450 46, 480 44, 496 44"
+        fill="none" stroke="rgba(168,183,200,.70)" stroke-width="3"/>
+  <path d="M36 120 C110 118, 160 112, 220 108 C280 106, 330 106, 390 106 C450 106, 480 106, 496 106"
+        fill="none" stroke="rgba(25,198,183,.85)" stroke-width="3"/>
+  <line x1="330" y1="54" x2="330" y2="132" stroke="rgba(25,198,183,.22)" stroke-width="2" stroke-dasharray="6 7"/>
+  <text x="344" y="72" fill="rgba(25,198,183,1)" font-size="12" font-weight="700">Bounded region</text>
+</svg>
+    <div class="microCap">Illustrative. Shape-based only.</div>
+  </div>
+</article>
+<article class="card">
+  <div class="cardHead">
+    <div class="icon">LOG</div>
+    <div>
+      <h2>Logistics & supply chain</h2>
+      <p class="muted">Routing, fulfillment, WMS/OMS coupling</p>
+    </div>
+  </div>
+  <p class="muted">Typical failure surface: backlog spirals and cascading re-plans.</p>
+  <ul class="bullets">
+    <li><b>Without:</b> local instability can amplify via retries, queues, and coupled dependencies.</li>
+    <li><b>With NEST:</b> prevents runaway amplification under stress.</li>
+    <li><b>Framing:</b> structural effect only (illustrative), not a performance claim.</li>
+  </ul>
+  <div class="micro">
+    <div class="microTitle">Illustrative structural graph</div>
+    <svg viewBox="0 0 520 170" role="img" aria-label="Illustrative tail bounding graph">
+  <rect x="12" y="12" width="496" height="146" rx="16" fill="rgba(255,255,255,.02)" stroke="rgba(255,255,255,.14)"/>
+  <text x="30" y="44" fill="rgba(168,183,200,1)" font-size="12">Illustrative: tail behavior</text>
+  <path d="M36 120 C110 118, 160 110, 220 96 C280 80, 330 66, 390 56 C450 46, 480 44, 496 44"
+        fill="none" stroke="rgba(168,183,200,.70)" stroke-width="3"/>
+  <path d="M36 120 C110 118, 160 112, 220 108 C280 106, 330 106, 390 106 C450 106, 480 106, 496 106"
+        fill="none" stroke="rgba(25,198,183,.85)" stroke-width="3"/>
+  <line x1="330" y1="54" x2="330" y2="132" stroke="rgba(25,198,183,.22)" stroke-width="2" stroke-dasharray="6 7"/>
+  <text x="344" y="72" fill="rgba(25,198,183,1)" font-size="12" font-weight="700">Bounded region</text>
+</svg>
+    <div class="microCap">Illustrative. Shape-based only.</div>
+  </div>
+</article>
+<article class="card">
+  <div class="cardHead">
+    <div class="icon">HOS</div>
+    <div>
+      <h2>Hospitals & clinical IT</h2>
+      <p class="muted">EHR integrations, lab/radiology interfaces</p>
+    </div>
+  </div>
+  <p class="muted">Typical failure surface: interface backlog cascades during partial outages.</p>
+  <ul class="bullets">
+    <li><b>Without:</b> local instability can amplify via retries, queues, and coupled dependencies.</li>
+    <li><b>With NEST:</b> contains system-wide degradation to local boundaries.</li>
+    <li><b>Framing:</b> structural effect only (illustrative), not a performance claim.</li>
+  </ul>
+  <div class="micro">
+    <div class="microTitle">Illustrative structural graph</div>
+    <svg viewBox="0 0 520 170" role="img" aria-label="Illustrative tail bounding graph">
+  <rect x="12" y="12" width="496" height="146" rx="16" fill="rgba(255,255,255,.02)" stroke="rgba(255,255,255,.14)"/>
+  <text x="30" y="44" fill="rgba(168,183,200,1)" font-size="12">Illustrative: tail behavior</text>
+  <path d="M36 120 C110 118, 160 110, 220 96 C280 80, 330 66, 390 56 C450 46, 480 44, 496 44"
+        fill="none" stroke="rgba(168,183,200,.70)" stroke-width="3"/>
+  <path d="M36 120 C110 118, 160 112, 220 108 C280 106, 330 106, 390 106 C450 106, 480 106, 496 106"
+        fill="none" stroke="rgba(25,198,183,.85)" stroke-width="3"/>
+  <line x1="330" y1="54" x2="330" y2="132" stroke="rgba(25,198,183,.22)" stroke-width="2" stroke-dasharray="6 7"/>
+  <text x="344" y="72" fill="rgba(25,198,183,1)" font-size="12" font-weight="700">Bounded region</text>
+</svg>
+    <div class="microCap">Illustrative. Shape-based only.</div>
+  </div>
+</article>
+<article class="card">
+  <div class="cardHead">
+    <div class="icon">ENE</div>
+    <div>
+      <h2>Energy & grid operations</h2>
+      <p class="muted">Dispatch support, telemetry aggregation</p>
+    </div>
+  </div>
+  <p class="muted">Typical failure surface: data loss causing oscillatory control decisions.</p>
+  <ul class="bullets">
+    <li><b>Without:</b> local instability can amplify via retries, queues, and coupled dependencies.</li>
+    <li><b>With NEST:</b> enforces bounded behavior under uncertainty.</li>
+    <li><b>Framing:</b> structural effect only (illustrative), not a performance claim.</li>
+  </ul>
+  <div class="micro">
+    <div class="microTitle">Illustrative structural graph</div>
+    <svg viewBox="0 0 520 170" role="img" aria-label="Illustrative tail bounding graph">
+  <rect x="12" y="12" width="496" height="146" rx="16" fill="rgba(255,255,255,.02)" stroke="rgba(255,255,255,.14)"/>
+  <text x="30" y="44" fill="rgba(168,183,200,1)" font-size="12">Illustrative: tail behavior</text>
+  <path d="M36 120 C110 118, 160 110, 220 96 C280 80, 330 66, 390 56 C450 46, 480 44, 496 44"
+        fill="none" stroke="rgba(168,183,200,.70)" stroke-width="3"/>
+  <path d="M36 120 C110 118, 160 112, 220 108 C280 106, 330 106, 390 106 C450 106, 480 106, 496 106"
+        fill="none" stroke="rgba(25,198,183,.85)" stroke-width="3"/>
+  <line x1="330" y1="54" x2="330" y2="132" stroke="rgba(25,198,183,.22)" stroke-width="2" stroke-dasharray="6 7"/>
+  <text x="344" y="72" fill="rgba(25,198,183,1)" font-size="12" font-weight="700">Bounded region</text>
+</svg>
+    <div class="microCap">Illustrative. Shape-based only.</div>
+  </div>
+</article>
+<article class="card">
+  <div class="cardHead">
+    <div class="icon">MAN</div>
+    <div>
+      <h2>Manufacturing execution</h2>
+      <p class="muted">MES, scheduling, quality systems</p>
+    </div>
+  </div>
+  <p class="muted">Typical failure surface: localized defects triggering global line stoppage chains.</p>
+  <ul class="bullets">
+    <li><b>Without:</b> local instability can amplify via retries, queues, and coupled dependencies.</li>
+    <li><b>With NEST:</b> keeps instability local; reduces propagation paths.</li>
+    <li><b>Framing:</b> structural effect only (illustrative), not a performance claim.</li>
+  </ul>
+  <div class="micro">
+    <div class="microTitle">Illustrative structural graph</div>
+    <svg viewBox="0 0 520 170" role="img" aria-label="Illustrative tail bounding graph">
+  <rect x="12" y="12" width="496" height="146" rx="16" fill="rgba(255,255,255,.02)" stroke="rgba(255,255,255,.14)"/>
+  <text x="30" y="44" fill="rgba(168,183,200,1)" font-size="12">Illustrative: tail behavior</text>
+  <path d="M36 120 C110 118, 160 110, 220 96 C280 80, 330 66, 390 56 C450 46, 480 44, 496 44"
+        fill="none" stroke="rgba(168,183,200,.70)" stroke-width="3"/>
+  <path d="M36 120 C110 118, 160 112, 220 108 C280 106, 330 106, 390 106 C450 106, 480 106, 496 106"
+        fill="none" stroke="rgba(25,198,183,.85)" stroke-width="3"/>
+  <line x1="330" y1="54" x2="330" y2="132" stroke="rgba(25,198,183,.22)" stroke-width="2" stroke-dasharray="6 7"/>
+  <text x="344" y="72" fill="rgba(25,198,183,1)" font-size="12" font-weight="700">Bounded region</text>
+</svg>
+    <div class="microCap">Illustrative. Shape-based only.</div>
+  </div>
+</article>
+<article class="card">
+  <div class="cardHead">
+    <div class="icon">SEC</div>
+    <div>
+      <h2>Cybersecurity pipelines</h2>
+      <p class="muted">SIEM/SOAR, ingest and response chains</p>
+    </div>
+  </div>
+  <p class="muted">Typical failure surface: alert floods causing response collapse.</p>
+  <ul class="bullets">
+    <li><b>Without:</b> local instability can amplify via retries, queues, and coupled dependencies.</li>
+    <li><b>With NEST:</b> bounds worst-case load and prevents collapse cascades.</li>
+    <li><b>Framing:</b> structural effect only (illustrative), not a performance claim.</li>
+  </ul>
+  <div class="micro">
+    <div class="microTitle">Illustrative structural graph</div>
+    <svg viewBox="0 0 520 170" role="img" aria-label="Illustrative tail bounding graph">
+  <rect x="12" y="12" width="496" height="146" rx="16" fill="rgba(255,255,255,.02)" stroke="rgba(255,255,255,.14)"/>
+  <text x="30" y="44" fill="rgba(168,183,200,1)" font-size="12">Illustrative: tail behavior</text>
+  <path d="M36 120 C110 118, 160 110, 220 96 C280 80, 330 66, 390 56 C450 46, 480 44, 496 44"
+        fill="none" stroke="rgba(168,183,200,.70)" stroke-width="3"/>
+  <path d="M36 120 C110 118, 160 112, 220 108 C280 106, 330 106, 390 106 C450 106, 480 106, 496 106"
+        fill="none" stroke="rgba(25,198,183,.85)" stroke-width="3"/>
+  <line x1="330" y1="54" x2="330" y2="132" stroke="rgba(25,198,183,.22)" stroke-width="2" stroke-dasharray="6 7"/>
+  <text x="344" y="72" fill="rgba(25,198,183,1)" font-size="12" font-weight="700">Bounded region</text>
+</svg>
+    <div class="microCap">Illustrative. Shape-based only.</div>
+  </div>
+</article>
+<article class="card">
+  <div class="cardHead">
+    <div class="icon">MED</div>
+    <div>
+      <h2>Media & streaming platforms</h2>
+      <p class="muted">CDN orchestration, session control</p>
+    </div>
+  </div>
+  <p class="muted">Typical failure surface: regional outages amplifying globally via retries.</p>
+  <ul class="bullets">
+    <li><b>Without:</b> local instability can amplify via retries, queues, and coupled dependencies.</li>
+    <li><b>With NEST:</b> prevents retry-driven amplification across regions.</li>
+    <li><b>Framing:</b> structural effect only (illustrative), not a performance claim.</li>
+  </ul>
+  <div class="micro">
+    <div class="microTitle">Illustrative structural graph</div>
+    <svg viewBox="0 0 520 170" role="img" aria-label="Illustrative tail bounding graph">
+  <rect x="12" y="12" width="496" height="146" rx="16" fill="rgba(255,255,255,.02)" stroke="rgba(255,255,255,.14)"/>
+  <text x="30" y="44" fill="rgba(168,183,200,1)" font-size="12">Illustrative: tail behavior</text>
+  <path d="M36 120 C110 118, 160 110, 220 96 C280 80, 330 66, 390 56 C450 46, 480 44, 496 44"
+        fill="none" stroke="rgba(168,183,200,.70)" stroke-width="3"/>
+  <path d="M36 120 C110 118, 160 112, 220 108 C280 106, 330 106, 390 106 C450 106, 480 106, 496 106"
+        fill="none" stroke="rgba(25,198,183,.85)" stroke-width="3"/>
+  <line x1="330" y1="54" x2="330" y2="132" stroke="rgba(25,198,183,.22)" stroke-width="2" stroke-dasharray="6 7"/>
+  <text x="344" y="72" fill="rgba(25,198,183,1)" font-size="12" font-weight="700">Bounded region</text>
+</svg>
+    <div class="microCap">Illustrative. Shape-based only.</div>
+  </div>
+</article>
+<article class="card">
+  <div class="cardHead">
+    <div class="icon">GOV</div>
+    <div>
+      <h2>Government digital services</h2>
+      <p class="muted">Identity, citizen portals, shared backends</p>
+    </div>
+  </div>
+  <p class="muted">Typical failure surface: surge events causing multi-service cascades.</p>
+  <ul class="bullets">
+    <li><b>Without:</b> local instability can amplify via retries, queues, and coupled dependencies.</li>
+    <li><b>With NEST:</b> bounded degradation without system-wide propagation.</li>
+    <li><b>Framing:</b> structural effect only (illustrative), not a performance claim.</li>
+  </ul>
+  <div class="micro">
+    <div class="microTitle">Illustrative structural graph</div>
+    <svg viewBox="0 0 520 170" role="img" aria-label="Illustrative tail bounding graph">
+  <rect x="12" y="12" width="496" height="146" rx="16" fill="rgba(255,255,255,.02)" stroke="rgba(255,255,255,.14)"/>
+  <text x="30" y="44" fill="rgba(168,183,200,1)" font-size="12">Illustrative: tail behavior</text>
+  <path d="M36 120 C110 118, 160 110, 220 96 C280 80, 330 66, 390 56 C450 46, 480 44, 496 44"
+        fill="none" stroke="rgba(168,183,200,.70)" stroke-width="3"/>
+  <path d="M36 120 C110 118, 160 112, 220 108 C280 106, 330 106, 390 106 C450 106, 480 106, 496 106"
+        fill="none" stroke="rgba(25,198,183,.85)" stroke-width="3"/>
+  <line x1="330" y1="54" x2="330" y2="132" stroke="rgba(25,198,183,.22)" stroke-width="2" stroke-dasharray="6 7"/>
+  <text x="344" y="72" fill="rgba(25,198,183,1)" font-size="12" font-weight="700">Bounded region</text>
+</svg>
+    <div class="microCap">Illustrative. Shape-based only.</div>
+  </div>
+</article>
+<article class="card">
+  <div class="cardHead">
+    <div class="icon">COM</div>
+    <div>
+      <h2>E-commerce at scale</h2>
+      <p class="muted">Checkout, inventory, pricing, fraud coupling</p>
+    </div>
+  </div>
+  <p class="muted">Typical failure surface: hot paths saturating dependencies and cascading failures.</p>
+  <ul class="bullets">
+    <li><b>Without:</b> local instability can amplify via retries, queues, and coupled dependencies.</li>
+    <li><b>With NEST:</b> keeps degradation local; bounds systemic exposure.</li>
+    <li><b>Framing:</b> structural effect only (illustrative), not a performance claim.</li>
+  </ul>
+  <div class="micro">
+    <div class="microTitle">Illustrative structural graph</div>
+    <svg viewBox="0 0 520 170" role="img" aria-label="Illustrative tail bounding graph">
+  <rect x="12" y="12" width="496" height="146" rx="16" fill="rgba(255,255,255,.02)" stroke="rgba(255,255,255,.14)"/>
+  <text x="30" y="44" fill="rgba(168,183,200,1)" font-size="12">Illustrative: tail behavior</text>
+  <path d="M36 120 C110 118, 160 110, 220 96 C280 80, 330 66, 390 56 C450 46, 480 44, 496 44"
+        fill="none" stroke="rgba(168,183,200,.70)" stroke-width="3"/>
+  <path d="M36 120 C110 118, 160 112, 220 108 C280 106, 330 106, 390 106 C450 106, 480 106, 496 106"
+        fill="none" stroke="rgba(25,198,183,.85)" stroke-width="3"/>
+  <line x1="330" y1="54" x2="330" y2="132" stroke="rgba(25,198,183,.22)" stroke-width="2" stroke-dasharray="6 7"/>
+  <text x="344" y="72" fill="rgba(25,198,183,1)" font-size="12" font-weight="700">Bounded region</text>
+</svg>
+    <div class="microCap">Illustrative. Shape-based only.</div>
+  </div>
+</article>
+<article class="card">
+  <div class="cardHead">
+    <div class="icon">IOT</div>
+    <div>
+      <h2>IoT platforms & device clouds</h2>
+      <p class="muted">Fleet control, command channels</p>
+    </div>
+  </div>
+  <p class="muted">Typical failure surface: device reconnect storms and command fan-out overload.</p>
+  <ul class="bullets">
+    <li><b>Without:</b> local instability can amplify via retries, queues, and coupled dependencies.</li>
+    <li><b>With NEST:</b> prevents fan-out amplification; bounded control.</li>
+    <li><b>Framing:</b> structural effect only (illustrative), not a performance claim.</li>
+  </ul>
+  <div class="micro">
+    <div class="microTitle">Illustrative structural graph</div>
+    <svg viewBox="0 0 520 170" role="img" aria-label="Illustrative tail bounding graph">
+  <rect x="12" y="12" width="496" height="146" rx="16" fill="rgba(255,255,255,.02)" stroke="rgba(255,255,255,.14)"/>
+  <text x="30" y="44" fill="rgba(168,183,200,1)" font-size="12">Illustrative: tail behavior</text>
+  <path d="M36 120 C110 118, 160 110, 220 96 C280 80, 330 66, 390 56 C450 46, 480 44, 496 44"
+        fill="none" stroke="rgba(168,183,200,.70)" stroke-width="3"/>
+  <path d="M36 120 C110 118, 160 112, 220 108 C280 106, 330 106, 390 106 C450 106, 480 106, 496 106"
+        fill="none" stroke="rgba(25,198,183,.85)" stroke-width="3"/>
+  <line x1="330" y1="54" x2="330" y2="132" stroke="rgba(25,198,183,.22)" stroke-width="2" stroke-dasharray="6 7"/>
+  <text x="344" y="72" fill="rgba(25,198,183,1)" font-size="12" font-weight="700">Bounded region</text>
+</svg>
+    <div class="microCap">Illustrative. Shape-based only.</div>
+  </div>
+</article>
+<article class="card">
+  <div class="cardHead">
+    <div class="icon">RND</div>
+    <div>
+      <h2>R&D compute & pipelines</h2>
+      <p class="muted">Job schedulers, shared clusters</p>
+    </div>
+  </div>
+  <p class="muted">Typical failure surface: scheduler thrash and queue collapse under uncertainty.</p>
+  <ul class="bullets">
+    <li><b>Without:</b> local instability can amplify via retries, queues, and coupled dependencies.</li>
+    <li><b>With NEST:</b> constrains worst-case scheduling cascades.</li>
+    <li><b>Framing:</b> structural effect only (illustrative), not a performance claim.</li>
+  </ul>
+  <div class="micro">
+    <div class="microTitle">Illustrative structural graph</div>
+    <svg viewBox="0 0 520 170" role="img" aria-label="Illustrative tail bounding graph">
+  <rect x="12" y="12" width="496" height="146" rx="16" fill="rgba(255,255,255,.02)" stroke="rgba(255,255,255,.14)"/>
+  <text x="30" y="44" fill="rgba(168,183,200,1)" font-size="12">Illustrative: tail behavior</text>
+  <path d="M36 120 C110 118, 160 110, 220 96 C280 80, 330 66, 390 56 C450 46, 480 44, 496 44"
+        fill="none" stroke="rgba(168,183,200,.70)" stroke-width="3"/>
+  <path d="M36 120 C110 118, 160 112, 220 108 C280 106, 330 106, 390 106 C450 106, 480 106, 496 106"
+        fill="none" stroke="rgba(25,198,183,.85)" stroke-width="3"/>
+  <line x1="330" y1="54" x2="330" y2="132" stroke="rgba(25,198,183,.22)" stroke-width="2" stroke-dasharray="6 7"/>
+  <text x="344" y="72" fill="rgba(25,198,183,1)" font-size="12" font-weight="700">Bounded region</text>
+</svg>
+    <div class="microCap">Illustrative. Shape-based only.</div>
+  </div>
+</article>
 </section>
 
 <section class="callout">
-  <h3>Important</h3>
-  <p>These examples describe failure surfaces and structural effects. They do not disclose implementation and should not be read as benchmarking claims.</p>
+  <h3>Graph rules</h3>
+  <p>All graphs are labeled “Illustrative”, shape-based, and show before/after structure (bounded tails, non-propagation). No % bars, no hockey-sticks, no leaderboards.</p>
 </section>
 </main>
 
@@ -142,7 +529,7 @@
   </div>
 </footer>
 
-<script src="script.js?v=5"></script>
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+<script src="script.js?v=7"></script>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
