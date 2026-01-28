@@ -1,41 +1,70 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Impressum - NEST Systems</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Impressum — NEST</title>
+  <meta name="description" content="Provider information and legal notice." />
+  <link rel="stylesheet" href="style.css?v=5" />
 </head>
 <body>
-<header>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="what.html">What NEST Is</a></li>
-      <li><a href="changes.html">What NEST Changes</a></li>
-      <li><a href="industries.html">Industries</a></li>
-      <li><a href="guarantees.html">Guarantees & Limits</a></li>
-      <li><a href="status.html">Scientific Status</a></li>
-      <li><a href="deploy.html">Deployment Model</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="impressum.html" class="active">Impressum</a></li>
-    </ul>
-  </nav>
+<header class="topbar">
+  <div class="wrap topbarInner">
+    <a class="brand" href="index.html" aria-label="Home">
+      <span class="mark" aria-hidden="true"></span>
+      <span class="brandText">
+        <span class="brandName">NEST</span>
+        <span class="brandTag">Deterministic system constraints</span>
+      </span>
+    </a>
+    <nav class="nav"><a class="" href="index.html">Home</a><a class="" href="product.html">Product</a><a class="" href="industries.html">Industries</a><a class="" href="contact.html">Contact</a><a class="active" href="impressum.html">Impressum</a></nav>
+  </div>
 </header>
 
-<main class="main-content">
-  <h1>Impressum</h1>
-  <p><strong>Company Name:</strong> NEST Systems GmbH</p>
-  <p><strong>Address:</strong> Techstrasse 5, 10115 Berlin, Germany</p>
-  <p><strong>Managing Director:</strong> Jane Doe</p>
-  <p><strong>Commercial Register:</strong> Berlin Charlottenburg, HRB 12345</p>
-  <p><strong>VAT ID:</strong> DE123456789</p>
-  <p><strong>Email:</strong> <a href="mailto:contact@nest.systems">contact@nest.systems</a></p>
-  <p><strong>Phone:</strong> +49 30 12345678</p>
-  <p><strong>Disclaimer:</strong> The information provided on this website is for general informational purposes only. NEST Systems assumes no responsibility for the accuracy or completeness of the content. Use of the information on this site is at your own risk, and we disclaim any liability for errors or omissions.</p>
+<main class="wrap page">
+<section class="hero">
+  <div class="heroLeft">
+    <div class="eyebrow">LEGAL</div>
+    <h1>Impressum</h1>
+    <p class="lead">Provider information and legal notices.</p>
+  </div>
+  <div class="heroRight">
+    <div class="panel">
+      <div class="panelTitle">Notice</div>
+      <div class="panelNote">Replace the placeholders below with your correct legal entity details.</div>
+    </div>
+  </div>
+</section>
+
+<section class="grid">
+  <article class="card">
+    <div class="cardHead"><div class="icon">ID</div><div><h2>Provider</h2><p class="muted">Owner / operator details</p></div></div>
+    <ul class="bullets">
+      <li><b>Company / Name:</b> [YOUR LEGAL NAME]</li>
+      <li><b>Address:</b> [STREET, CITY, POSTCODE, COUNTRY]</li>
+      <li><b>Email:</b> contact@boundedsystem.com</li>
+      <li><b>Phone:</b> [OPTIONAL]</li>
+    </ul>
+  </article>
+  <article class="card">
+    <div class="cardHead"><div class="icon">DS</div><div><h2>Disclaimer</h2><p class="muted">Claim-safe footer</p></div></div>
+    <ul class="bullets">
+      <li>Information is provided for general informational purposes.</li>
+      <li>No warranties as to completeness or accuracy.</li>
+      <li>No performance or outcome guarantees are implied beyond structural claims stated on the site.</li>
+    </ul>
+  </article>
+</section>
 </main>
 
-<footer>
-  <p>© 2025 NEST Systems GmbH</p>
+<footer class="footer">
+  <div class="wrap footerInner">
+    <div>© <span id="y"></span> NEST</div>
+    <div class="footerLinks"><a href="impressum.html">Impressum</a></div>
+  </div>
 </footer>
+
+<script src="script.js?v=5"></script>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>

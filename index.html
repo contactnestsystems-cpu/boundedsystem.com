@@ -4,188 +4,98 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>NEST — Deterministic System Constraints</title>
-  <meta name="description" content="NEST is a deterministic, non-adaptive system constraint layer that bounds worst-case behavior and prevents instability from propagating." />
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Deterministic, non-adaptive system constraint layer that bounds worst-case behavior and prevents instability from propagating." />
+  <link rel="stylesheet" href="style.css?v=5" />
 </head>
 <body>
 <header class="topbar">
   <div class="wrap topbarInner">
-    <a class="brand" href="index.html" aria-label="NEST Home">
+    <a class="brand" href="index.html" aria-label="Home">
       <span class="mark" aria-hidden="true"></span>
       <span class="brandText">
         <span class="brandName">NEST</span>
         <span class="brandTag">Deterministic system constraints</span>
       </span>
     </a>
-    <nav class="nav">
-      <a class="active" href="index.html">Home</a>
-      <a href="what.html">What NEST Is</a>
-      <a href="changes.html">What NEST Changes</a>
-      <a href="industries.html">Industries</a>
-      <a href="guarantees.html">Guarantees & Limits</a>
-      <a href="status.html">Scientific Status</a>
-      <a href="deploy.html">Deployment Model</a>
-      <a href="contact.html">Contact</a>
-      <a href="impressum.html">Impressum</a>
-    </nav>
+    <nav class="nav"><a class="active" href="index.html">Home</a><a class="" href="product.html">Product</a><a class="" href="industries.html">Industries</a><a class="" href="contact.html">Contact</a><a class="" href="impressum.html">Impressum</a></nav>
   </div>
 </header>
 
 <main class="wrap page">
-  <section class="hero">
-    <div class="heroLeft">
-      <div class="eyebrow">NEXT-GEN RELIABILITY LAYER</div>
-      <h1>Bound system behavior. Prevent instability from propagating.</h1>
-      <p class="lead">
-        NEST is a deterministic, non-adaptive system constraint. It does not rely on prediction, learning, or feedback.
-        Its effects are structural: when enabled, certain categories of instability cannot propagate or sustain.
-      </p>
-
-      <div class="chipRow">
-        <span class="chip">Deterministic</span>
-        <span class="chip">Bounded</span>
-        <span class="chip">Non-adaptive</span>
-        <span class="chip">No prediction</span>
-        <span class="chip">No monitoring requirement</span>
-      </div>
-
-      <div class="ctaRow">
-        <a class="btnPrimary" href="what.html">Read the model</a>
-        <a class="btnGhost" href="industries.html">Explore industries</a>
-      </div>
-
-      <div class="fineprint">
-        Observable improvements depend on system context and workload. No performance or outcome guarantees are implied beyond bounded behavior and non-propagation of instability.
-      </div>
-    </div>
-
-    <div class="heroRight">
-      <div class="panel">
-        <div class="panelTitle">Illustrative schematic</div>
-        <svg class="schem" viewBox="0 0 520 320" role="img" aria-label="Illustrative schematic of bounded propagation">
-          <defs>
-            <linearGradient id="g1" x1="0" x2="1">
-              <stop offset="0" stop-color="rgba(11,122,122,.26)"/>
-              <stop offset="1" stop-color="rgba(11,122,122,.06)"/>
-            </linearGradient>
-          </defs>
-          <rect x="16" y="18" width="488" height="284" rx="18" fill="rgba(255,255,255,.55)" stroke="rgba(219,227,236,1)"/>
-          <text x="34" y="54" fill="rgba(93,114,134,1)" font-size="12">Before: disturbance can amplify</text>
-          <path d="M40 92 C120 120, 160 70, 230 96 C300 122, 320 52, 390 86 C450 116, 470 70, 488 86" fill="none" stroke="rgba(93,114,134,.65)" stroke-width="3"/>
-          <circle cx="82" cy="104" r="6" fill="rgba(93,114,134,.65)"/>
-          <circle cx="230" cy="96" r="6" fill="rgba(93,114,134,.65)"/>
-          <circle cx="390" cy="86" r="6" fill="rgba(93,114,134,.65)"/>
-
-          <text x="34" y="182" fill="rgba(93,114,134,1)" font-size="12">With NEST: bounded, non-propagating</text>
-          <rect x="40" y="202" width="210" height="64" rx="14" fill="url(#g1)" stroke="rgba(11,122,122,.35)"/>
-          <text x="56" y="228" fill="rgba(10,95,102,1)" font-size="12" font-weight="700">Contained region</text>
-          <text x="56" y="250" fill="rgba(93,114,134,1)" font-size="12">Local disturbance cannot sustain</text>
-
-          <rect x="270" y="202" width="218" height="64" rx="14" fill="rgba(255,255,255,.55)" stroke="rgba(219,227,236,1)"/>
-          <text x="286" y="236" fill="rgba(93,114,134,1)" font-size="12">Rest of system remains stable</text>
-
-          <path d="M250 234 L270 234" stroke="rgba(219,227,236,1)" stroke-width="4"/>
-          <path d="M254 222 L266 234 L254 246" fill="none" stroke="rgba(11,122,122,.55)" stroke-width="3"/>
-        </svg>
-        <div class="panelNote">Structure only. Not measured data.</div>
-      </div>
-
-      <div class="metricsRow">
-        <div class="metric">
-          <div class="metricTop">Primary effect</div>
-          <div class="metricVal">Bound worst-case</div>
-          <div class="metricSub">Precludes unbounded escalation</div>
-        </div>
-        <div class="metric">
-          <div class="metricTop">Failure mode</div>
-          <div class="metricVal">Non-propagating</div>
-          <div class="metricSub">Reduced blast radius</div>
-        </div>
-        <div class="metric">
-          <div class="metricTop">Operation</div>
-          <div class="metricVal">Deterministic</div>
-          <div class="metricSub">Repeatable behavior</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="split">
-    <div class="card">
-      <h2>What NEST is</h2>
-      <p class="muted">
-        A deterministic constraint layer that operates above domain logic and before rule escalation. It constrains system evolution rather than outputs.
-      </p>
-      <ul class="bullets">
-        <li>No prediction, no learning, no adaptive state.</li>
-        <li>Enforces bounded behavior under uncertainty.</li>
-        <li>Deterministic and repeatable by design.</li>
-      </ul>
-      <a class="link" href="what.html">Read details →</a>
-    </div>
-
-    <div class="card">
-      <h2>What NEST changes</h2>
-      <p class="muted">
-        Instead of detecting failure after it happens, NEST structurally prevents certain categories of escalation from sustaining or propagating.
-      </p>
-      <ul class="bullets">
-        <li>Containment of retry storms / queue avalanches.</li>
-        <li>Bounded recovery dynamics (less oscillation).</li>
-        <li>Lower systemic risk during disturbances.</li>
-      </ul>
-      <a class="link" href="changes.html">See comparisons →</a>
-    </div>
-  </section>
-
-  <section class="showcase">
-    <div class="showHead">
-      <h2>Where it matters</h2>
-      <p class="muted">Examples are framed as recognizable failure situations and structural effects, without exposing implementation details.</p>
-    </div>
-    <div class="showGrid">
-      <a class="showCard" href="industries.html#financial">
-        <div class="showIcon">FX</div>
-        <div class="showTitle">Financial systems</div>
-        <div class="showText">Tail risk, burst overload, stability under stress.</div>
-      </a>
-      <a class="showCard" href="industries.html#autonomy">
-        <div class="showIcon">AU</div>
-        <div class="showTitle">Autonomous systems</div>
-        <div class="showText">Bounded trajectories, safe actuation under uncertainty.</div>
-      </a>
-      <a class="showCard" href="industries.html#critical">
-        <div class="showIcon">SC</div>
-        <div class="showTitle">Safety-critical</div>
-        <div class="showText">Determinism and repeatability for verification.</div>
-      </a>
-      <a class="showCard" href="industries.html#cloud">
-        <div class="showIcon">CL</div>
-        <div class="showTitle">Cloud & SRE</div>
-        <div class="showText">Thundering herds, brownouts, control-plane stability.</div>
-      </a>
-    </div>
-  </section>
-
-  <section class="callout">
-    <h3>Claims framing</h3>
-    <p>
-      NEST introduces deterministic structural constraints on system behavior. Observable effects depend on system context and workload.
-      No performance or outcome guarantees are implied beyond bounded behavior and non-propagation of instability.
+<section class="hero">
+  <div class="heroLeft">
+    <div class="eyebrow">NEXT-GEN RELIABILITY LAYER</div>
+    <h1>Bound system behavior. Prevent instability from propagating.</h1>
+    <p class="lead">
+      NEST is a deterministic, non-adaptive system constraint. It does not rely on prediction, learning, or feedback.
+      Its effects are structural: when enabled, certain categories of instability cannot propagate or sustain.
     </p>
-  </section>
+    <div class="chipRow">
+      <span class="chip">Deterministic</span><span class="chip">Bounded</span><span class="chip">Non-adaptive</span>
+      <span class="chip">No prediction</span><span class="chip">No monitoring requirement</span>
+    </div>
+    <div class="ctaRow">
+      <a class="btnPrimary" href="product.html">Product overview</a>
+      <a class="btnGhost" href="industries.html">Industry examples</a>
+    </div>
+    <div class="fineprint">
+      Observable effects depend on system context and workload. No performance or outcome guarantees are implied beyond
+      bounded behavior and non-propagation of instability.
+    </div>
+  </div>
+  <div class="heroRight">
+    <div class="panel">
+      <div class="panelTitle">Illustrative schematic</div>
+      <svg class="schem" viewBox="0 0 520 320" role="img" aria-label="Illustrative schematic of bounded propagation">
+        <rect x="16" y="18" width="488" height="284" rx="18" fill="rgba(255,255,255,.55)" stroke="rgba(219,227,236,1)"/>
+        <text x="34" y="54" fill="rgba(93,114,134,1)" font-size="12">Before: disturbance can amplify</text>
+        <path d="M40 92 C120 120, 160 70, 230 96 C300 122, 320 52, 390 86 C450 116, 470 70, 488 86" fill="none" stroke="rgba(93,114,134,.65)" stroke-width="3"/>
+        <text x="34" y="182" fill="rgba(93,114,134,1)" font-size="12">With NEST: bounded, non-propagating</text>
+        <rect x="40" y="202" width="210" height="64" rx="14" fill="rgba(11,122,122,.10)" stroke="rgba(11,122,122,.35)"/>
+        <text x="56" y="228" fill="rgba(10,95,102,1)" font-size="12" font-weight="700">Contained region</text>
+        <text x="56" y="250" fill="rgba(93,114,134,1)" font-size="12">Local disturbance cannot sustain</text>
+        <rect x="270" y="202" width="218" height="64" rx="14" fill="rgba(255,255,255,.55)" stroke="rgba(219,227,236,1)"/>
+        <text x="286" y="236" fill="rgba(93,114,134,1)" font-size="12">Rest of system remains stable</text>
+      </svg>
+      <div class="panelNote">Structure only. Not measured data.</div>
+    </div>
+  </div>
+</section>
+
+<section class="grid">
+  <article class="card">
+    <div class="cardHead"><div class="icon">BW</div><div><h2>Bound worst-case</h2><p class="muted">Precludes unbounded escalation under uncertainty.</p></div></div>
+    <ul class="bullets">
+      <li><b>Target:</b> tail blow-ups, overload loops, unstable recovery.</li>
+      <li><b>Effect:</b> bounded behavior instead of runaway amplification.</li>
+    </ul>
+  </article>
+  <article class="card">
+    <div class="cardHead"><div class="icon">NP</div><div><h2>Non-propagating</h2><p class="muted">Keeps failures local; reduces blast radius.</p></div></div>
+    <ul class="bullets">
+      <li><b>Target:</b> retry storms, queue avalanches, cascade chains.</li>
+      <li><b>Effect:</b> propagation is structurally prevented from sustaining.</li>
+    </ul>
+  </article>
+</section>
+
+<section class="callout">
+  <h3>Claims framing</h3>
+  <p>
+    NEST introduces deterministic structural constraints on system behavior. Observable effects depend on system context and workload.
+    No performance or outcome guarantees are implied beyond bounded behavior and non-propagation of instability.
+  </p>
+</section>
 </main>
 
 <footer class="footer">
   <div class="wrap footerInner">
-    <div>© <span id="y"></span> NEST Systems</div>
-    <div class="footerLinks">
-      <a href="impressum.html">Impressum</a>
-    </div>
+    <div>© <span id="y"></span> NEST</div>
+    <div class="footerLinks"><a href="impressum.html">Impressum</a></div>
   </div>
 </footer>
 
-<script src="script.js"></script>
-<script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+<script src="script.js?v=5"></script>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
